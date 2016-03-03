@@ -1103,6 +1103,8 @@ window.paceOptions = {
 
                   printSuccess('Success:', 'You have been logged out');
 
+                  location.reload();
+
                 }else{
 
                   printError('Error logging out:', 'Not logged in');
@@ -1126,6 +1128,8 @@ window.paceOptions = {
                       _this.authenticated(true, authData);
 
                       printSuccess('Successfully logged in:', authData.twitter.displayName);
+
+                      location.reload();
 
                     }else{
 
