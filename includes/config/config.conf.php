@@ -8,7 +8,7 @@
   *
   */
 
-$DEV_MODE = true;
+$DEV_MODE = false;
 
 /**
   * Temporary development path that the
@@ -50,8 +50,8 @@ $GA_TRACKING_PROD = 'UA-PRODX-X';
 
 $SITE_IMAGE       = 'http://placehold.it/400x200';
 $SITE_TITLE       = 'DevTools Online | A Massive Collection of Web Development Tools';
-$SITE_DESCRIPTION = 'A massive collection of online tools to help streamline your life as a developer.';
-$SITE_KEYWORDS    = 'devtools, dev tools, web design, web development, webdev, applications, advertising, inspiration, google, website builders, version control, social networking, data tracking, seo, marketing, databases, javascript, html, css, php, perl, icons, design, graphic design, sebastian inman';
+$SITE_DESCRIPTION = 'A massive online collection of web development tools and resources.';
+$SITE_KEYWORDS    = 'devtools, dev tools, online, web design, web development, webdev, applications, advertising, inspiration, google, website builders, version control, social networking, data tracking, seo, marketing, databases, javascript, html, css, php, perl, icons, design, graphic design, sebastian inman, thinkpixels, think pixels';
 
 /**
   * Meta information for sharing the site on Facebook.

@@ -895,7 +895,7 @@ aside {
       display: none;
       width: 20%;
       height: auto; }
-      @media (max-width: 1500px) {
+      @media (max-width: 1600px) {
         #content #tools-list li {
           width: 25%;
           height: auto; } }

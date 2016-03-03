@@ -164,8 +164,7 @@ window.paceOptions = {
     DevTools.Description = 'A massive collection of online web development tools';
     DevTools.Timestamp   = +new Date;
 
-    DevTools.Location = 'http://104.236.129.44/devtools.online/';
-
+    DevTools.Location = 'http://localhost/devtools.online/';
     DevTools.Firebase = new Firebase('https://devtoolsonline.firebaseio.com/');
 
     DevTools.Authenticated;
@@ -622,22 +621,28 @@ window.paceOptions = {
 
               if(DevTools.Authenticated) {
 
+                console.log('Authenticated: ' + DevTools.User.id);
+
                 DevTools.Firebase.child('users/' + DevTools.User.id).once('value', function(snapshot) {
 
                   var likes     = snapshot.val().likes;
                   var favorites = snapshot.val().favorites;
 
-                  if(likes && likes != undefined) {
+                  if(likes) {
+
+                    console.log('show user likes:');
 
                     $.each(likes, function(toolID, data) {
 
-                      $('.tool[data-id="' + toolID + '"] .tool-action[data-action="heart"]').toggleActionStatus('like');
+                      console.log(toolID);
+
+                      $('.tool[data-id="' + toolID + '"]').find('.tool-action[data-action="heart"]').toggleActionStatus('like');
 
                     });
 
                   }
 
-                  if(favorites && favorites != undefined) {
+                  if(favorites) {
 
                     $.each(favorites, function(toolID) {
 
@@ -672,6 +677,7 @@ window.paceOptions = {
                   $userAvatar.attr('src', authData.twitter.profileImageURL);
 
                   $userInfo.show();
+
                   _this.showUserLikesAndFavorites();
 
                   // ===============================================
@@ -723,6 +729,8 @@ window.paceOptions = {
                   DevTools.Authenticated = false;
                   DevTools.User = null;
 
+                  _this.clearLikesAndFavorites();
+
               }
 
             };
@@ -773,6 +781,8 @@ window.paceOptions = {
             };
 
             this.clearLikesAndFavorites = function() {
+
+              console.log('Likes and favorites have been cleared');
 
               $btnAction.removeClass('liked').removeClass('favorited');
 
@@ -1090,9 +1100,6 @@ window.paceOptions = {
                 if(DevTools.Authenticated) {
 
                   _this.authenticated(false);
-                  _this.clearLikesAndFavorites();
-
-                  location.reload();
 
                   printSuccess('Success:', 'You have been logged out');
 
@@ -1117,8 +1124,6 @@ window.paceOptions = {
                     if(!error && authData) {
 
                       _this.authenticated(true, authData);
-
-                      location.reload();
 
                       printSuccess('Successfully logged in:', authData.twitter.displayName);
 

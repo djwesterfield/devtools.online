@@ -480,22 +480,28 @@
 
               if(DevTools.Authenticated) {
 
+                console.log('Authenticated: ' + DevTools.User.id);
+
                 DevTools.Firebase.child('users/' + DevTools.User.id).once('value', function(snapshot) {
 
                   var likes     = snapshot.val().likes;
                   var favorites = snapshot.val().favorites;
 
-                  if(likes && likes != undefined) {
+                  if(likes) {
+
+                    console.log('show user likes:');
 
                     $.each(likes, function(toolID, data) {
 
-                      $('.tool[data-id="' + toolID + '"] .tool-action[data-action="heart"]').toggleActionStatus('like');
+                      console.log(toolID);
+
+                      $('.tool[data-id="' + toolID + '"]').find('.tool-action[data-action="heart"]').toggleActionStatus('like');
 
                     });
 
                   }
 
-                  if(favorites && favorites != undefined) {
+                  if(favorites) {
 
                     $.each(favorites, function(toolID) {
 
@@ -530,6 +536,7 @@
                   $userAvatar.attr('src', authData.twitter.profileImageURL);
 
                   $userInfo.show();
+
                   _this.showUserLikesAndFavorites();
 
                   // ===============================================
@@ -581,6 +588,8 @@
                   DevTools.Authenticated = false;
                   DevTools.User = null;
 
+                  _this.clearLikesAndFavorites();
+
               }
 
             };
@@ -631,6 +640,8 @@
             };
 
             this.clearLikesAndFavorites = function() {
+
+              console.log('Likes and favorites have been cleared');
 
               $btnAction.removeClass('liked').removeClass('favorited');
 
@@ -948,9 +959,6 @@
                 if(DevTools.Authenticated) {
 
                   _this.authenticated(false);
-                  _this.clearLikesAndFavorites();
-
-                  location.reload();
 
                   printSuccess('Success:', 'You have been logged out');
 
@@ -975,8 +983,6 @@
                     if(!error && authData) {
 
                       _this.authenticated(true, authData);
-
-                      location.reload();
 
                       printSuccess('Successfully logged in:', authData.twitter.displayName);
 
