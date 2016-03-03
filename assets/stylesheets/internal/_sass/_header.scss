@@ -1,0 +1,367 @@
+#page-header {
+
+  top:  0px;
+  left: 0px;
+  z-index: 200;
+  position: fixed;
+  padding-left: $sidebar_width;
+  background-color: #242B34;
+
+  @include size(100%, $header_height);
+
+  #beta-note {
+
+    top:  0px;
+    left: 0px;
+
+    z-index:  100;
+    position: absolute;
+
+    border-top: 0px solid transparent;
+    border-bottom: 3em solid transparent;
+    border-left: 3em solid #FF6B6B;
+
+    @include size(0px);
+
+    &:before {
+
+      top: 0em;
+      left: -4em;
+
+
+      color: white;
+      cursor: help;
+      font-size: 9px;
+      font-weight: 300;
+      position: absolute;
+      line-height: 2.5em;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+      content: 'beta';
+
+      @include size(3em);
+      @include transform(-45deg, 1, 0px, 0px, false);
+
+    }
+
+  }
+
+  #logo-container {
+
+    top:  0px;
+    left: 0px;
+    position: absolute;
+    padding: 1.35em 2em 1.5em 2em;
+    background-color: rgba(0,0,0,0.25);
+
+    @include size($sidebar_width, 100%);
+
+    @media(max-width: $mobile_break) {
+
+      @include size(100%);
+
+    }
+
+    h1 {
+
+      color: white;
+      font-size: 1.55em;
+      font-weight: 800;
+      line-height: 1.35em;
+      letter-spacing: 0.245em;
+      text-transform: uppercase;
+
+      span {
+
+        color: white;
+        font-weight: 300;
+
+      }
+
+    }
+
+    p {
+
+      color: #858585;
+      font-size: 9px;
+      font-weight: 300;
+      margin-top: 3px;
+      letter-spacing: 0.55px;
+      text-transform: uppercase;
+
+    }
+
+  }
+
+  #toggle-mobile-menu {
+
+    top: 50%;
+    right: 1.5em;
+    border: 0px;
+    display: none;
+    // margin-top: -14px;
+    position: absolute;
+    border-radius: 3px;
+    padding: 8px 6px;
+    background: transparent;
+    border: 1px solid rgba(white, 0.15);
+    @include position(0px, center);
+
+    @media(max-width: $mobile_break) {
+
+      display: block;
+
+    }
+
+    .bar {
+
+      float: left;
+      clear: both;
+      display: block;
+      background: white;
+
+      @include size(2em, 0.15em);
+
+      &:nth-child(even) {
+
+        margin: 0.45em 0px;
+
+      }
+
+    }
+
+  }
+
+  #header-container {
+
+    float: left;
+    padding: 1.5em 2em;
+    position: relative;
+    display: inline-block;
+
+    @include size(100%);
+
+    @media(max-width: $mobile_break) {
+
+      display: none;
+
+    }
+
+    #search-form {
+
+      float: left;
+      position: relative;
+      display: inline-block;
+
+      @include size(auto, 100%);
+
+      #search-icon {
+
+        top: 0px;
+        left: 0px;
+        z-index: 1;
+        color: white;
+        position: absolute;
+        text-align: center;
+        line-height: $user_avatar_size;
+
+        @include size($user_avatar_size);
+
+      }
+
+      #search-input {
+
+        z-index: 0;
+        float: left;
+        border: 0px;
+        color: white;
+        outline: none;
+        min-width: 50%;
+        max-width: 75%;
+        position: relative;
+        border-radius: $user_avatar_size;
+        display: inline-block;
+        background-color: #2a343c;
+        padding: 0em 1em 0px $user_avatar_size;
+
+        -webkit-user-select: all;
+        -moz-user-select: all;
+        -ms-user-select: all;
+        user-select: all;
+
+        @include size(35em, 100%);
+
+      }
+
+      #search-submit {
+
+        float: left;
+        border: 0px;
+        color: white;
+        outline: none;
+        display: none;
+        padding: 0em 1.5em;
+        position: relative;
+        display: inline-block;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        background-color: $search_button_background;
+
+        @include size(auto, 100%);
+
+      }
+
+    }
+
+    #user-info {
+
+      float: right;
+      display: none;
+      cursor: pointer;
+      position: relative;
+
+      background: #2a343c;
+      display: inline-block;
+      border-radius: $user_avatar_size;
+      padding: 0px $user_avatar_size/2 0px 0px;
+
+      #user-avatar,
+      #user-name {
+
+        z-index: 1;
+        float: left;
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        line-height: $user_avatar_size;
+
+        @include size(auto, $user_avatar_size);
+
+      }
+
+      #user-avatar {
+
+        border-radius: 100%;
+        border: 5px solid #2a343c;
+        margin-right: 10px;
+
+      }
+
+      #user-name {
+
+        color: white;
+        font-size: 13px;
+        font-weight: 600;
+
+      }
+
+      #user-dropper {
+
+        z-index: 1;
+        float: left;
+        color: white;
+        margin-left: 10px;
+        position: relative;
+        display: none;
+        line-height: $user_avatar_size;
+
+      }
+
+      #user-menu {
+
+        top: 100%;
+        right:  0px;
+        z-index: 0;
+        display: none;
+
+        margin-top: -2em;
+        background: #2a343c;
+        position: absolute;
+        padding: 2em 0em;
+        border-bottom-left-radius: $user_avatar_size / 2;
+        border-bottom-right-radius: $user_avatar_size / 2;
+
+
+        @include size(100%, auto);
+
+        li {
+
+          float: left;
+          clear: both;
+          padding: 1em;
+          color: white;
+          position: relative;
+          display: inline-block;
+
+          @include size(100%, auto);
+
+        }
+
+      }
+
+      &:hover {
+
+        #user-menu {
+
+          // display: block;
+
+        }
+
+      }
+
+    }
+
+    #twitter-login {
+
+      border: 0px;
+      float: right;
+      display: none;
+      outline: none;
+      overflow: hidden;
+      position: relative;
+      display: inline-block;
+      padding: 1em 1em 1em 4em;
+      background: $social_twitter;
+      border-radius: $user_avatar_size;
+      padding: 0px $user_avatar_size/2 0px 0px;
+
+      @include size(auto, 100%);
+
+      span, .fa {
+
+        float: left;
+        color: white;
+        position: relative;
+        display: inline-block;
+        line-height: $user_avatar_size;
+
+      }
+
+      span {
+
+        font-size: 13px;
+        font-weight: 600;
+
+      }
+
+      .fa {
+
+        font-size: 1.25em;
+        text-align: center;
+        margin-right: 10px;
+        border-radius: 100%;
+        display: inline-block;
+        border: 5px solid $social_twitter;
+        background: rgba(black, 0.25);
+        line-height: $user_avatar_size - 8;
+
+        @include size($user_avatar_size);
+
+      }
+
+    }
+
+  }
+
+}

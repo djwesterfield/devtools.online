@@ -1,0 +1,33 @@
+@import '_mixins';
+@import '_colors';
+@import '_reset';
+
+$loading_height: 8px;
+
+$open_sans: 'Open Sans', sans-serif;
+
+$header_height: 80px;
+$subheader_height: 100px;
+
+$sidebar_width:    320px;
+$sidebar_nav_size: 100px;
+
+$user_avatar_size: 40px;
+
+$break_four:  1500px;
+$break_three: 1400px;
+$break_two:   1120px;
+$break_one:    900px;
+
+$columns_five:  5;
+$columns_four:  4;
+$columns_three: 3;
+$columns_two:   2;
+$columns_one:   1;
+
+$column_padding : 1em;
+
+$filter_size: 24px;
+
+$tablet_break: 1024px;
+$mobile_break: 600px;

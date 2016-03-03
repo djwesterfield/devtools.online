@@ -1,0 +1,360 @@
+#main {
+
+  &[data-category=".home"] {
+
+    .category-selector[data-active="true"] {
+
+      border-color: $category_home;
+
+    }
+
+    #content-header {
+
+      background-image: url(https://d13yacurqjgara.cloudfront.net/users/104235/screenshots/2165596/attachments/397944/ELE-EO-7.12.jpg);
+
+      &:before {
+
+        background-color: rgba($category_home, 0.75);
+
+      }
+
+    }
+
+    .thumb-actions a:hover {
+
+      border-color:     $category_home !important;
+      background-color: $category_home !important;
+
+    }
+
+    .details a:hover {
+
+      color: $category_home !important;
+
+    }
+
+  }
+
+  &[data-category=".all"] {
+
+    .category-selector[data-active="true"] {
+
+      border-color: #FF776F;
+
+    }
+
+    #content-header {
+
+      background-image: url(https://d13yacurqjgara.cloudfront.net/users/104235/screenshots/2165596/attachments/397944/ELE-EO-7.12.jpg);
+
+      &:before {
+
+        background-color: rgba($category_all, 0.75);
+
+      }
+
+    }
+
+    .thumb-actions a:hover {
+
+      border-color:     $category_all !important;
+      background-color: $category_all !important;
+
+    }
+
+    .details a:hover {
+
+      color: $category_all !important;
+
+    }
+
+  }
+
+  &[data-category=".design"] {
+
+    .pace-progress {
+
+      // background: #898BC5;
+
+    }
+
+    .category-selector[data-active="true"] {
+
+      border-color: $category_design;
+
+    }
+
+    #content-header {
+
+      background-image: url(https://d13yacurqjgara.cloudfront.net/users/908898/screenshots/2441366/attachments/474937/5.jpg);
+
+      &:before {
+
+        background-color: rgba($category_design, 0.75);
+
+      }
+
+    }
+
+    .thumb-actions a:hover {
+
+      border-color:     $category_design !important;
+      background-color: $category_design !important;
+
+    }
+
+    .details a:hover {
+
+      color: $category_design !important;
+
+    }
+
+  }
+
+  &[data-category=".development"] {
+
+    .pace-progress {
+
+      // background: #0AC9A4;
+
+    }
+
+    .category-selector[data-active="true"] {
+
+      border-color: $category_development;
+
+    }
+
+    #content-header {
+
+      background-image: url(https://d13yacurqjgara.cloudfront.net/users/20254/screenshots/712951/attachments/66553/ui_library_fullsize.jpg);
+
+      &:before {
+
+        background-color: rgba($category_development, 0.75);
+
+      }
+
+    }
+
+    .thumb-actions a:hover {
+
+      border-color:     $category_development !important;
+      background-color: $category_development !important;
+
+    }
+
+    .details a:hover {
+
+      color: $category_development !important;
+
+    }
+
+  }
+
+  &[data-category=".marketing"] {
+
+    .pace-progress {
+
+      // background: #FF816B;
+
+    }
+
+    .category-selector[data-active="true"] {
+
+      border-color: $category_marketing;
+
+    }
+
+    #content-header {
+
+      background-image: url(https://d13yacurqjgara.cloudfront.net/users/92955/screenshots/2318620/attachments/440464/endpoint.jpg);
+
+      &:before {
+
+        background-color: rgba($category_marketing, 0.75);
+
+      }
+
+    }
+
+    .thumb-actions a:hover {
+
+      border-color:     $category_marketing !important;
+      background-color: $category_marketing !important;
+
+    }
+
+    .details a:hover {
+
+      color: $category_marketing !important;
+
+    }
+
+  }
+
+  &[data-category=".analytics"] {
+
+    .pace-progress {
+
+      // background: #869D52;
+
+    }
+
+    .category-selector[data-active="true"] {
+
+      border-color: $category_analytics;
+
+    }
+
+    #content-header {
+
+      background-image: url(https://d13yacurqjgara.cloudfront.net/users/92955/screenshots/2318620/attachments/440464/endpoint.jpg);
+
+      &:before {
+
+        background-color: rgba($category_analytics, 0.75);
+
+      }
+
+    }
+
+    .thumb-actions a:hover {
+
+      border-color:     $category_analytics !important;
+      background-color: $category_analytics !important;
+
+    }
+
+    .details a:hover {
+
+      color: $category_analytics !important;
+
+    }
+
+  }
+
+  &[data-category=".productivity"] {
+
+    .pace-progress {
+
+      // background: #C37D9E;
+
+    }
+
+    .category-selector[data-active="true"] {
+
+      border-color: $category_productivity;
+
+    }
+
+    #content-header {
+
+      background-image: url(https://d13yacurqjgara.cloudfront.net/users/92955/screenshots/2318620/attachments/440464/endpoint.jpg);
+
+      &:before {
+
+        background-color: rgba($category_productivity, 0.75);
+
+      }
+
+    }
+
+    .thumb-actions a:hover {
+
+      border-color:     $category_productivity !important;
+      background-color: $category_productivity !important;
+
+    }
+
+    .details a:hover {
+
+      color: $category_productivity !important;
+
+    }
+
+  }
+
+  &[data-category=".web-hosting"] {
+
+    .pace-progress {
+
+      // background: #5EBBE7;
+
+    }
+
+    .category-selector[data-active="true"] {
+
+      border-color: $category_webhosting;
+
+    }
+
+    #content-header {
+
+      background-image: url(https://d13yacurqjgara.cloudfront.net/users/6541/screenshots/997791/dribb.png);
+
+      &:before {
+
+        background-color: rgba($category_webhosting, 0.75);
+
+      }
+
+    }
+
+    .thumb-actions a:hover {
+
+      border-color:     $category_webhosting !important;
+      background-color: $category_webhosting !important;
+
+    }
+
+    .details a:hover {
+
+      color: $category_webhosting !important;
+
+    }
+
+  }
+
+  &[data-category=".miscellaneous"] {
+
+    .pace-progress {
+
+      // background: #F4C563;
+
+    }
+
+    .category-selector[data-active="true"] {
+
+      border-color: $category_misc;
+
+    }
+
+    #content-header {
+
+      background-image: url(https://d13yacurqjgara.cloudfront.net/users/6541/screenshots/997791/dribb.png);
+
+      &:before {
+
+        background-color: rgba($category_misc, 0.75);
+
+      }
+
+    }
+
+    .thumb-actions a:hover {
+
+      border-color:     $category_misc !important;
+      background-color: $category_misc !important;
+
+    }
+
+    .details a:hover {
+
+      color: $category_misc !important;
+
+    }
+
+  }
+
+}

@@ -1,0 +1,40 @@
+footer {
+
+  left: 0px;
+  bottom: 0px;
+  background: white;
+  position: absolute;
+  border-top: 1px solid $border_color;
+
+  padding-left: $sidebar_width;
+
+  @include size(100%, auto);
+
+  @media(max-width: $mobile_break) {
+
+    float: left;
+    clear: both;
+    float: left;
+    left: initial;
+    bottom: initial;
+    position: relative;
+    padding-left: 0px;
+
+  }
+
+  p {
+
+    float: left;
+    font-size: 12px;
+    padding: 2em 2em;
+    color: $content_color;
+
+    @media(max-width: $mobile_break) {
+
+      padding: 2em;
+
+    }
+
+  }
+
+}

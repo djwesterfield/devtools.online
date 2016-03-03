@@ -1,0 +1,71 @@
+<!doctype html>
+
+<!--[if lt IE 9]>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="ie">
+<![endif]-->
+
+<!--[if gt IE 9]><!-->
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+<!--<![endif]-->
+
+<head>
+
+<title>{{title}}</title>
+
+<meta charset="utf-8">
+<meta name="robots" content="noodp">
+
+<meta itemprop="creator" name="web_author" content="Think Pixels Co.">
+<meta itemprop="about" name="description" content="{{description}}">
+<meta itemprop="keywords" name="keywords" content="{{keywords}}">
+<meta itemprop="image" itemprop="thumbnailUrl" cotent="{{image}}">
+
+<meta name="og:type" content="website">
+<meta name="og:url" content="{{url}}">
+<meta name="og:image" content="{{og:image}}">
+<meta name="og:title" content="{{og:title}}">
+<meta name="og:description" content="{{og:description}}">
+
+<meta name="twitter:card" content="{{twitter:card}}">
+<meta name="twitter:site" content="@thinkpixels">
+<meta name="twitter:creator" content="@thinkpixels">
+<meta name="twitter:url" content="{{url}}">
+<meta name="twitter:image" content="{{twitter:image}}">
+<meta name="twitter:title" content="{{twitter:title}}">
+<meta name="twitter:description" content="{{twitter:description}}">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<link rel="icon" href="{{favicon}}">
+<link rel="manifest" href="{{manifest}}">
+<link rel="canonical" href="{{url}}">
+
+{{godmode}}
+{{javascript_head}}
+
+{{googlefonts}}
+{{stylesheets}}
+
+</head>
+<body>
+
+<!--[if lt IE 9]><div id="main" itemprop="mainContentOfPage"><![endif]-->
+<!--[if gt IE 9]><!--><main id="main" itemprop="mainContentOfPage" tabindex="-1"><!--<![endif]-->
+
+{{include:header}}
+{{include:sidebar}}
+{{include:content}}
+
+<!--[if lt IE 9]></div><![endif]-->
+<!--[if gt IE 9]><!--></main><!--<![endif]-->
+
+{{javascript_body}}
+{{google_tracking}}
+
+</body>
+</html>

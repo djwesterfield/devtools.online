@@ -1,0 +1,43 @@
+*, *:before, *:after {
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	@include box-sizing();
+
+}
+
+*:before,
+*:after {
+
+	content: '';
+
+}
+
+html, body, header, main, section, article,
+aside, summary, menu, nav, footer,
+ol, ul, li, strong, b, em, i, sub, sub,
+time, abbr, audio, video, label,
+h1, h2, h3, h4, h5, h6, p, a {
+	margin: 0px;
+	padding: 0px;
+	font: inherit;
+	line-height: 1;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+nav, ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}

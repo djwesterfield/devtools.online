@@ -45,3 +45,15 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Ignore application directories
+.sass-cache/
+node_modules/
+
+#Ignore application files
+.htaccess
+Gruntfile.js
+sitemap.xml
+robots.txt
+package.json
+manifest.json

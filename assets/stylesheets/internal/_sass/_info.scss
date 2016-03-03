@@ -1,0 +1,21 @@
+#tool-info {
+
+  right: 0px;
+  bottom: 0px;
+
+  top:  $header_height + $subheader_height;
+  left: $sidebar_width;
+
+  z-index: -1000;
+  display: none;
+  background: red;
+  position: fixed;
+
+  &.visible {
+
+    display: block;
+    z-index: 90;
+
+  }
+
+}

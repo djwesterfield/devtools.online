@@ -1,0 +1,35 @@
+@import '_globals';
+@import '_theme';
+@import '_header';
+@import '_mobile';
+@import '_sidebar';
+@import '_content';
+@import '_info';
+@import '_footer';
+
+body {
+
+  font-size: 13px;
+  font-weight: 400;
+  font-family: $open_sans;
+
+  background: rgba(#F5F5F5, 1);
+
+  a, button, .link, .pointer {
+
+    cursor: pointer;
+
+    @include transition(all, 0.265s, ease, 0s);
+
+  }
+
+  #main {
+
+    outline:     none;
+    min-height: 100vh;
+
+    @include size(100%, auto);
+
+  }
+
+}
