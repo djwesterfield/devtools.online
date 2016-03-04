@@ -1,6 +1,6 @@
 <header id="page-header">
 
-  <div id="beta-note" title="This website is still very much a beta. There might be some minor bugs floating around on the site. If you find a bug or have some feedback for the site, please create an issues for it on the DevTools Github repository: https://github.com/thinkpixels/devtools/issues"></div>
+  <div id="beta-note" title="This website is still very much a beta. There might be some minor bugs floating around on the site. If you find a bug or have some feedback for the site, please create an issues for it on the DevTools Github repository: https://github.com/thinkpixels/devtools.online/issues"></div>
 
   <div id="logo-container">
     <h1>DevTools<span>.Online</span></h1>
