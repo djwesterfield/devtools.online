@@ -14,7 +14,7 @@
 
       &:before {
 
-        background-color: rgba($category_home, 0.95);
+        background-color: rgba($category_home, 1);
 
       }
 
@@ -58,9 +58,10 @@
 
       background-image: url(https://d13yacurqjgara.cloudfront.net/users/104235/screenshots/2165596/attachments/397944/ELE-EO-7.12.jpg);
 
-      &:before {
+      &:before,
+      #content-promotion-container:before {
 
-        background-color: rgba($category_all, 0.95);
+        background-color: rgba($category_all, 1);
 
       }
 
@@ -110,9 +111,10 @@
 
       background-image: url(https://d13yacurqjgara.cloudfront.net/users/908898/screenshots/2441366/attachments/474937/5.jpg);
 
-      &:before {
+      &:before,
+      #content-promotion-container:before {
 
-        background-color: rgba($category_design, 0.95);
+        background-color: rgba($category_design, 1);
 
       }
 
@@ -162,9 +164,10 @@
 
       background-image: url(https://d13yacurqjgara.cloudfront.net/users/20254/screenshots/712951/attachments/66553/ui_library_fullsize.jpg);
 
-      &:before {
+      &:before,
+      #content-promotion-container:before {
 
-        background-color: rgba($category_development, 0.95);
+        background-color: rgba($category_development, 1);
 
       }
 
@@ -214,9 +217,10 @@
 
       background-image: url(https://d13yacurqjgara.cloudfront.net/users/92955/screenshots/2318620/attachments/440464/endpoint.jpg);
 
-      &:before {
+      &:before,
+      #content-promotion-container:before {
 
-        background-color: rgba($category_marketing, 0.95);
+        background-color: rgba($category_marketing, 1);
 
       }
 
@@ -266,9 +270,10 @@
 
       background-image: url(https://d13yacurqjgara.cloudfront.net/users/92955/screenshots/2318620/attachments/440464/endpoint.jpg);
 
-      &:before {
+      &:before,
+      #content-promotion-container:before {
 
-        background-color: rgba($category_analytics, 0.95);
+        background-color: rgba($category_analytics, 1);
 
       }
 
@@ -318,9 +323,10 @@
 
       background-image: url(https://d13yacurqjgara.cloudfront.net/users/92955/screenshots/2318620/attachments/440464/endpoint.jpg);
 
-      &:before {
+      &:before,
+      #content-promotion-container:before {
 
-        background-color: rgba($category_productivity, 0.95);
+        background-color: rgba($category_productivity, 1);
 
       }
 
@@ -370,9 +376,10 @@
 
       background-image: url(https://d13yacurqjgara.cloudfront.net/users/6541/screenshots/997791/dribb.png);
 
-      &:before {
+      &:before,
+      #content-promotion-container:before {
 
-        background-color: rgba($category_webhosting, 0.95);
+        background-color: rgba($category_webhosting, 1);
 
       }
 
@@ -422,9 +429,10 @@
 
       background-image: url(https://d13yacurqjgara.cloudfront.net/users/6541/screenshots/997791/dribb.png);
 
-      &:before {
+      &:before,
+      #content-promotion-container:before {
 
-        background-color: rgba($category_misc, 0.95);
+        background-color: rgba($category_misc, 1);
 
       }
 

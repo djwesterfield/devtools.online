@@ -4,7 +4,7 @@
 
   <div id="logo-container">
     <h1>DevTools<span>.Online</span></h1>
-    <p>A Massive Collection of Web Development Tools</p>
+    <h2>A Massive Collection of Web Development Tools</h2>
   </div>
 
   <button id="toggle-mobile-menu">

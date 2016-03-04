@@ -140,6 +140,30 @@
 
             };
 
+            this.toggleGoogleAds = function() {
+
+              if(is_mobile) {
+
+
+
+              }else{
+
+                if(window.size.x >= 1200) {
+
+                }
+
+                if(window.size.x >= 800) {
+
+                }
+
+                if(window.size.x >= 600) {
+
+                }
+
+              }
+
+            };
+
             this.addNewTool = function() {
 
               var tool = {
@@ -990,6 +1014,10 @@
 
                 $window.on('load hashchange resize', function(event) {
 
+                  window.size = { x: $window.width(), y: $window.height() };
+
+                  _this.toggleGoogleAds();
+
                   if(event.type === 'load') {
 
                     $('a').on('click tap', function(event){
@@ -1075,6 +1103,20 @@
                             target: '.mix',
                             filter: '.tool-filter',
                             sort:   '.tool-sort'
+
+                          }
+
+                        }).on('mixEnd', function(e, state) {
+
+                          var toolsVisible = state.totalShow;
+
+                          if(!toolsVisible || toolsVisible == 0) {
+
+                            console.log('NO TOOLS FOUND!');
+
+                          }else{
+
+                            console.log(toolsVisible + ' TOOLS FOUND!');
 
                           }
 
@@ -1179,7 +1221,6 @@
             // ==========================
 
             return this.buildPage();
-
 
         }
 
