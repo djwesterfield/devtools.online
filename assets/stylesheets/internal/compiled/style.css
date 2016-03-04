@@ -234,7 +234,9 @@ table {
 #main[data-category=".home"] .details a:hover {
   color: #3AAFB9 !important; }
 #main[data-category=".all"] .category-selector[data-active="true"] {
-  border-color: #FF776F; }
+  border-color: #FF6F59; }
+#main[data-category=".all"] aside nav#tag-nav .tag-selector[data-active=true] {
+  background-color: #FF6F59; }
 #main[data-category=".all"] #content-header {
   background-image: url(https://d13yacurqjgara.cloudfront.net/users/104235/screenshots/2165596/attachments/397944/ELE-EO-7.12.jpg); }
   #main[data-category=".all"] #content-header:before {
@@ -247,6 +249,8 @@ table {
   color: #FF6F59 !important; }
 #main[data-category=".design"] .category-selector[data-active="true"] {
   border-color: #6870b8; }
+#main[data-category=".design"] aside nav#tag-nav .tag-selector[data-active=true] {
+  background-color: #6870b8; }
 #main[data-category=".design"] #content-header {
   background-image: url(https://d13yacurqjgara.cloudfront.net/users/908898/screenshots/2441366/attachments/474937/5.jpg); }
   #main[data-category=".design"] #content-header:before {
@@ -259,6 +263,8 @@ table {
   color: #6870b8 !important; }
 #main[data-category=".development"] .category-selector[data-active="true"] {
   border-color: #09BC8A; }
+#main[data-category=".development"] aside nav#tag-nav .tag-selector[data-active=true] {
+  background-color: #09BC8A; }
 #main[data-category=".development"] #content-header {
   background-image: url(https://d13yacurqjgara.cloudfront.net/users/20254/screenshots/712951/attachments/66553/ui_library_fullsize.jpg); }
   #main[data-category=".development"] #content-header:before {
@@ -271,6 +277,8 @@ table {
   color: #09BC8A !important; }
 #main[data-category=".marketing"] .category-selector[data-active="true"] {
   border-color: #FF6B6B; }
+#main[data-category=".marketing"] aside nav#tag-nav .tag-selector[data-active=true] {
+  background-color: #FF6B6B; }
 #main[data-category=".marketing"] #content-header {
   background-image: url(https://d13yacurqjgara.cloudfront.net/users/92955/screenshots/2318620/attachments/440464/endpoint.jpg); }
   #main[data-category=".marketing"] #content-header:before {
@@ -283,6 +291,8 @@ table {
   color: #FF6B6B !important; }
 #main[data-category=".analytics"] .category-selector[data-active="true"] {
   border-color: #7B904B; }
+#main[data-category=".analytics"] aside nav#tag-nav .tag-selector[data-active=true] {
+  background-color: #7B904B; }
 #main[data-category=".analytics"] #content-header {
   background-image: url(https://d13yacurqjgara.cloudfront.net/users/92955/screenshots/2318620/attachments/440464/endpoint.jpg); }
   #main[data-category=".analytics"] #content-header:before {
@@ -295,6 +305,8 @@ table {
   color: #7B904B !important; }
 #main[data-category=".productivity"] .category-selector[data-active="true"] {
   border-color: #774C60; }
+#main[data-category=".productivity"] aside nav#tag-nav .tag-selector[data-active=true] {
+  background-color: #774C60; }
 #main[data-category=".productivity"] #content-header {
   background-image: url(https://d13yacurqjgara.cloudfront.net/users/92955/screenshots/2318620/attachments/440464/endpoint.jpg); }
   #main[data-category=".productivity"] #content-header:before {
@@ -307,6 +319,8 @@ table {
   color: #774C60 !important; }
 #main[data-category=".web-hosting"] .category-selector[data-active="true"] {
   border-color: #2F99E7; }
+#main[data-category=".web-hosting"] aside nav#tag-nav .tag-selector[data-active=true] {
+  background-color: #2F99E7; }
 #main[data-category=".web-hosting"] #content-header {
   background-image: url(https://d13yacurqjgara.cloudfront.net/users/6541/screenshots/997791/dribb.png); }
   #main[data-category=".web-hosting"] #content-header:before {
@@ -319,6 +333,8 @@ table {
   color: #2F99E7 !important; }
 #main[data-category=".miscellaneous"] .category-selector[data-active="true"] {
   border-color: #E7B03D; }
+#main[data-category=".miscellaneous"] aside nav#tag-nav .tag-selector[data-active=true] {
+  background-color: #E7B03D; }
 #main[data-category=".miscellaneous"] #content-header {
   background-image: url(https://d13yacurqjgara.cloudfront.net/users/6541/screenshots/997791/dribb.png); }
   #main[data-category=".miscellaneous"] #content-header:before {
@@ -431,6 +447,33 @@ table {
     @media (max-width: 600px) {
       #page-header #header-container {
         display: none; } }
+    #page-header #header-container #header-main-nav {
+      float: left;
+      margin-right: 2em;
+      position: relative;
+      display: inline-block; }
+      #page-header #header-container #header-main-nav li {
+        float: left;
+        margin-right: 1em;
+        display: inline-block; }
+        #page-header #header-container #header-main-nav li:last-child {
+          margin-right: 0em; }
+        #page-header #header-container #header-main-nav li a {
+          float: left;
+          color: white;
+          padding: 0px 2em;
+          text-align: center;
+          background: #2a343c;
+          line-height: 40px;
+          border-radius: 40px;
+          width: auto;
+          height: 40px; }
+          #page-header #header-container #header-main-nav li a.circle {
+            padding: 0em;
+            width: 40px;
+            height: 40px; }
+          #page-header #header-container #header-main-nav li a .fa {
+            font-size: 18px; }
     #page-header #header-container #search-form {
       float: left;
       position: relative;
@@ -442,6 +485,7 @@ table {
         left: 0px;
         z-index: 1;
         color: white;
+        font-size: 16px;
         position: absolute;
         text-align: center;
         line-height: 40px;

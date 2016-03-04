@@ -44,7 +44,13 @@
 
     .category-selector[data-active="true"] {
 
-      border-color: #FF776F;
+      border-color: $category_all;
+
+    }
+
+    aside nav#tag-nav .tag-selector[data-active=true] {
+
+      background-color: $category_all;
 
     }
 
@@ -94,6 +100,12 @@
 
     }
 
+    aside nav#tag-nav .tag-selector[data-active=true] {
+
+      background-color: $category_design;
+
+    }
+
     #content-header {
 
       background-image: url(https://d13yacurqjgara.cloudfront.net/users/908898/screenshots/2441366/attachments/474937/5.jpg);
@@ -137,6 +149,12 @@
     .category-selector[data-active="true"] {
 
       border-color: $category_development;
+
+    }
+
+    aside nav#tag-nav .tag-selector[data-active=true] {
+
+      background-color: $category_development;
 
     }
 
@@ -186,6 +204,12 @@
 
     }
 
+    aside nav#tag-nav .tag-selector[data-active=true] {
+
+      background-color: $category_marketing;
+
+    }
+
     #content-header {
 
       background-image: url(https://d13yacurqjgara.cloudfront.net/users/92955/screenshots/2318620/attachments/440464/endpoint.jpg);
@@ -229,6 +253,12 @@
     .category-selector[data-active="true"] {
 
       border-color: $category_analytics;
+
+    }
+
+    aside nav#tag-nav .tag-selector[data-active=true] {
+
+      background-color: $category_analytics;
 
     }
 
@@ -278,6 +308,12 @@
 
     }
 
+    aside nav#tag-nav .tag-selector[data-active=true] {
+
+      background-color: $category_productivity;
+
+    }
+
     #content-header {
 
       background-image: url(https://d13yacurqjgara.cloudfront.net/users/92955/screenshots/2318620/attachments/440464/endpoint.jpg);
@@ -324,6 +360,12 @@
 
     }
 
+    aside nav#tag-nav .tag-selector[data-active=true] {
+
+      background-color: $category_webhosting;
+
+    }
+
     #content-header {
 
       background-image: url(https://d13yacurqjgara.cloudfront.net/users/6541/screenshots/997791/dribb.png);
@@ -367,6 +409,12 @@
     .category-selector[data-active="true"] {
 
       border-color: $category_misc;
+
+    }
+
+    aside nav#tag-nav .tag-selector[data-active=true] {
+
+      background-color: $category_misc;
 
     }
 

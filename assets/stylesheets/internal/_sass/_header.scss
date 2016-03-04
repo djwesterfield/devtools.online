@@ -148,6 +148,56 @@
 
     }
 
+    #header-main-nav {
+
+      float: left;
+      margin-right: 2em;
+      position: relative;
+      display: inline-block;
+
+      li {
+
+        float: left;
+        margin-right: 1em;
+        display: inline-block;
+
+        &:last-child {
+
+          margin-right: 0em;
+
+        }
+
+        a {
+
+          float: left;
+          color: white;
+          padding: 0px 2em;
+          text-align: center;
+          background: #2a343c;
+          line-height: $user_avatar_size;
+          border-radius: $user_avatar_size;
+
+          @include size(auto, $user_avatar_size);
+
+          &.circle {
+
+            padding: 0em;
+            @include size($user_avatar_size);
+
+          }
+
+          .fa {
+
+            font-size: 18px;
+
+          }
+
+        }
+
+      }
+
+    }
+
     #search-form {
 
       float: left;
@@ -162,6 +212,7 @@
         left: 0px;
         z-index: 1;
         color: white;
+        font-size: 16px;
         position: absolute;
         text-align: center;
         line-height: $user_avatar_size;
