@@ -476,6 +476,8 @@ table {
             font-size: 18px; }
     #page-header #header-container #search-form {
       float: left;
+      min-width: 35%;
+      max-width: 50%;
       position: relative;
       display: inline-block;
       width: auto;
@@ -497,18 +499,16 @@ table {
         border: 0px;
         color: white;
         outline: none;
-        min-width: 50%;
-        max-width: 75%;
         position: relative;
-        border-radius: 40px;
         display: inline-block;
         background-color: #2a343c;
+        border-radius: 40px;
         padding: 0em 1em 0px 40px;
         -webkit-user-select: all;
         -moz-user-select: all;
         -ms-user-select: all;
         user-select: all;
-        width: 35em;
+        width: 100%;
         height: 100%; }
       #page-header #header-container #search-form #search-submit {
         float: left;
