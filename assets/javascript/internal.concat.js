@@ -373,11 +373,15 @@ window.mobile = {
 
                   categoryThis++;
 
-                  var output = '<li><a class="category-selector tool-filter pointer" href="' + DevTools.Location + '#!/' + category.hash + '/everything/" data-active="false" data-filter=".' + category.hash + '"><i class="fa fa-' + category.icon + '"></i>' + category.name + '</a></li>';
+                  if(category.visible === true) {
 
-                  $categoryNav.append(output);
+                    var output = '<li><a class="category-selector tool-filter pointer" href="' + DevTools.Location + '#!/' + category.hash + '/everything/" data-active="false" data-filter=".' + category.hash + '"><i class="fa fa-' + category.icon + '"></i>' + category.name + '</a></li>';
 
-                  if(category.tags) {
+                    $categoryNav.append(output);
+
+                  }
+
+                  if(category.tags && category.visible === true) {
 
                     var tagsCount = category.tags.length;
                     var tagThis   = 0;
