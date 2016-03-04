@@ -1083,14 +1083,22 @@
 
                           callback: function(value) {
 
-                            DevTools.Search = value.replace(/ /g, ", .");
+                            if(value) {
 
-                            if(DevTools.Search && DevTools.Seach != '') {
+                              DevTools.Search   = value.replace(/ /g, "-");
 
-                              $toolsList.mixItUp('filter', '.' + DevTools.Search);
+                              if(DevTools.Search && DevTools.Seach != '') {
 
-                              $contentHeader.find('#category').text('Search');
-                              $contentHeader.find('#tag').text('#' + DevTools.Search);
+                                $toolsList.mixItUp('filter', '.' + DevTools.Search);
+
+                                $contentHeader.find('#category').text('Search');
+                                $contentHeader.find('#tag').text('#' + DevTools.Search);
+
+                              }else{
+
+                                $toolsList.mixItUp('filter', DevTools.Filter);
+
+                              }
 
                             }else{
 
@@ -1098,7 +1106,7 @@
 
                             }
 
-                          },
+                          }
 
                         });
 
