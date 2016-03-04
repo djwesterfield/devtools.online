@@ -24,9 +24,19 @@ window.mobile = {
 
   },
 
+  desktop: function() {
+
+    return $(window).width() < 600 ? true : false;
+
+  },
+
   any: function() {
 
-    return (window.mobile.android() || window.mobile.blkbry() || window.mobile.ios() || window.mobile.ie());
+    return (window.mobile.android() ||
+            window.mobile.blkbry()  ||
+            window.mobile.ios()     ||
+            window.mobile.ie()      ||
+            window.mobile.desktop());
 
   },
 
@@ -634,7 +644,7 @@ window.paceOptions = {
 
                     $.each(likes, function(toolID, data) {
 
-                      console.log(toolID);
+                      console.log($('.tool[data-id="' + toolID + '"]').length);
 
                       $('.tool[data-id="' + toolID + '"]').find('.tool-action[data-action="heart"]').toggleActionStatus('like');
 
@@ -678,7 +688,7 @@ window.paceOptions = {
 
                   $userInfo.show();
 
-                  _this.showUserLikesAndFavorites();
+                  // _this.showUserLikesAndFavorites();
 
                   // ===============================================
                   // add user to the database if they aren't already
@@ -1159,13 +1169,13 @@ window.paceOptions = {
 
                   if(event.type === 'load') {
 
-                    $('a').on('click', function(event){
+                    $('a').on('click tap', function(event){
 
                       event.preventDefault();
 
                     });
 
-                    $mobileBtn.on('click', function(event) {
+                    $mobileBtn.on('click tap', function(event) {
 
                       event.preventDefault();
 
@@ -1273,6 +1283,12 @@ window.paceOptions = {
                           },
 
                         });
+
+                        if(DevTools.Authenticated) {
+
+                          _this.showUserLikesAndFavorites();
+
+                        }
 
                       });
 

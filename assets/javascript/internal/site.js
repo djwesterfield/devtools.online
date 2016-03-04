@@ -493,7 +493,7 @@
 
                     $.each(likes, function(toolID, data) {
 
-                      console.log(toolID);
+                      console.log($('.tool[data-id="' + toolID + '"]').length);
 
                       $('.tool[data-id="' + toolID + '"]').find('.tool-action[data-action="heart"]').toggleActionStatus('like');
 
@@ -537,7 +537,7 @@
 
                   $userInfo.show();
 
-                  _this.showUserLikesAndFavorites();
+                  // _this.showUserLikesAndFavorites();
 
                   // ===============================================
                   // add user to the database if they aren't already
@@ -1018,13 +1018,13 @@
 
                   if(event.type === 'load') {
 
-                    $('a').on('click', function(event){
+                    $('a').on('click tap', function(event){
 
                       event.preventDefault();
 
                     });
 
-                    $mobileBtn.on('click', function(event) {
+                    $mobileBtn.on('click tap', function(event) {
 
                       event.preventDefault();
 
@@ -1132,6 +1132,12 @@
                           },
 
                         });
+
+                        if(DevTools.Authenticated) {
+
+                          _this.showUserLikesAndFavorites();
+
+                        }
 
                       });
 
