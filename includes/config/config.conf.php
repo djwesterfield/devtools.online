@@ -17,7 +17,7 @@ $DEV_MODE = false;
   * empty string before production.
   */
 
-$TEMP_PATH = 'devtools.online/';
+$TEMP_PATH = '';
 
 /**
   * Google Analytics tracking codes.
