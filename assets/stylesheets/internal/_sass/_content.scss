@@ -303,7 +303,7 @@
               border-top-right-radius: 4px;
               border-top-left-radius: 4px;
 
-              background: rgba($sidebar_background, 0.95);
+              // background: rgba($sidebar_background, 0.95);
 
               @include size(100%);
               @include opacity(0);
@@ -322,6 +322,12 @@
 
                 @include size(42px);
                 @include position(0px, center);
+
+                &:hover {
+
+                  background: rgba(white, 1);
+
+                }
 
                 &.more-info {
 

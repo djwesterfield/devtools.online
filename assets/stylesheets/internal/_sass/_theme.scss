@@ -20,10 +20,15 @@
 
     }
 
-    .thumb-actions a:hover {
+    .thumb-actions {
 
-      border-color:     $category_home !important;
-      background-color: $category_home !important;
+      background-color: rgba($category_home, 0.95);
+
+      a:hover {
+
+        color: $category_home !important;
+
+      }
 
     }
 
@@ -55,10 +60,15 @@
 
     }
 
-    .thumb-actions a:hover {
+    .thumb-actions {
 
-      border-color:     $category_all !important;
-      background-color: $category_all !important;
+      background-color: rgba($category_all, 0.95);
+
+      a:hover {
+
+        color: $category_all !important;
+
+      }
 
     }
 
@@ -96,10 +106,15 @@
 
     }
 
-    .thumb-actions a:hover {
+    .thumb-actions {
 
-      border-color:     $category_design !important;
-      background-color: $category_design !important;
+      background-color: rgba($category_design, 0.95);
+
+      a:hover {
+
+        color: $category_design !important;
+
+      }
 
     }
 
@@ -137,10 +152,15 @@
 
     }
 
-    .thumb-actions a:hover {
+    .thumb-actions {
 
-      border-color:     $category_development !important;
-      background-color: $category_development !important;
+      background-color: rgba($category_development, 0.95);
+
+      a:hover {
+
+        color: $category_development !important;
+
+      }
 
     }
 
@@ -178,10 +198,15 @@
 
     }
 
-    .thumb-actions a:hover {
+    .thumb-actions {
 
-      border-color:     $category_marketing !important;
-      background-color: $category_marketing !important;
+      background-color: rgba($category_marketing, 0.95);
+
+      a:hover {
+
+        color: $category_marketing !important;
+
+      }
 
     }
 
@@ -219,10 +244,15 @@
 
     }
 
-    .thumb-actions a:hover {
+    .thumb-actions {
 
-      border-color:     $category_analytics !important;
-      background-color: $category_analytics !important;
+      background-color: rgba($category_analytics, 0.95);
+
+      a:hover {
+
+        color: $category_analytics !important;
+
+      }
 
     }
 
@@ -260,10 +290,15 @@
 
     }
 
-    .thumb-actions a:hover {
+    .thumb-actions {
 
-      border-color:     $category_productivity !important;
-      background-color: $category_productivity !important;
+      background-color: rgba($category_productivity, 0.95);
+
+      a:hover {
+
+        color: $category_productivity !important;
+
+      }
 
     }
 
@@ -301,10 +336,15 @@
 
     }
 
-    .thumb-actions a:hover {
+    .thumb-actions {
 
-      border-color:     $category_webhosting !important;
-      background-color: $category_webhosting !important;
+      background-color: rgba($category_webhosting, 0.95);
+
+      a:hover {
+
+        color: $category_webhosting !important;
+
+      }
 
     }
 
@@ -342,10 +382,15 @@
 
     }
 
-    .thumb-actions a:hover {
+    .thumb-actions {
 
-      border-color:     $category_misc !important;
-      background-color: $category_misc !important;
+      background-color: rgba($category_misc, 0.95);
+
+      a:hover {
+
+        color: $category_misc !important;
+
+      }
 
     }
 
