@@ -248,7 +248,7 @@ table {
 #main[data-category=".home"] #content-header {
   background-image: url(https://d13yacurqjgara.cloudfront.net/users/104235/screenshots/2165596/attachments/397944/ELE-EO-7.12.jpg); }
   #main[data-category=".home"] #content-header:before {
-    background-color: rgba(58, 175, 185, 0.75); }
+    background-color: rgba(58, 175, 185, 0.95); }
 #main[data-category=".home"] .thumb-actions {
   background-color: rgba(58, 175, 185, 0.95); }
   #main[data-category=".home"] .thumb-actions a:hover {
@@ -260,7 +260,7 @@ table {
 #main[data-category=".all"] #content-header {
   background-image: url(https://d13yacurqjgara.cloudfront.net/users/104235/screenshots/2165596/attachments/397944/ELE-EO-7.12.jpg); }
   #main[data-category=".all"] #content-header:before {
-    background-color: rgba(255, 111, 89, 0.75); }
+    background-color: rgba(255, 111, 89, 0.95); }
 #main[data-category=".all"] .thumb-actions {
   background-color: rgba(255, 111, 89, 0.95); }
   #main[data-category=".all"] .thumb-actions a:hover {
@@ -272,7 +272,7 @@ table {
 #main[data-category=".design"] #content-header {
   background-image: url(https://d13yacurqjgara.cloudfront.net/users/908898/screenshots/2441366/attachments/474937/5.jpg); }
   #main[data-category=".design"] #content-header:before {
-    background-color: rgba(104, 112, 184, 0.75); }
+    background-color: rgba(104, 112, 184, 0.95); }
 #main[data-category=".design"] .thumb-actions {
   background-color: rgba(104, 112, 184, 0.95); }
   #main[data-category=".design"] .thumb-actions a:hover {
@@ -284,7 +284,7 @@ table {
 #main[data-category=".development"] #content-header {
   background-image: url(https://d13yacurqjgara.cloudfront.net/users/20254/screenshots/712951/attachments/66553/ui_library_fullsize.jpg); }
   #main[data-category=".development"] #content-header:before {
-    background-color: rgba(9, 188, 138, 0.75); }
+    background-color: rgba(9, 188, 138, 0.95); }
 #main[data-category=".development"] .thumb-actions {
   background-color: rgba(9, 188, 138, 0.95); }
   #main[data-category=".development"] .thumb-actions a:hover {
@@ -296,7 +296,7 @@ table {
 #main[data-category=".marketing"] #content-header {
   background-image: url(https://d13yacurqjgara.cloudfront.net/users/92955/screenshots/2318620/attachments/440464/endpoint.jpg); }
   #main[data-category=".marketing"] #content-header:before {
-    background-color: rgba(255, 107, 107, 0.75); }
+    background-color: rgba(255, 107, 107, 0.95); }
 #main[data-category=".marketing"] .thumb-actions {
   background-color: rgba(255, 107, 107, 0.95); }
   #main[data-category=".marketing"] .thumb-actions a:hover {
@@ -308,7 +308,7 @@ table {
 #main[data-category=".analytics"] #content-header {
   background-image: url(https://d13yacurqjgara.cloudfront.net/users/92955/screenshots/2318620/attachments/440464/endpoint.jpg); }
   #main[data-category=".analytics"] #content-header:before {
-    background-color: rgba(123, 144, 75, 0.75); }
+    background-color: rgba(123, 144, 75, 0.95); }
 #main[data-category=".analytics"] .thumb-actions {
   background-color: rgba(123, 144, 75, 0.95); }
   #main[data-category=".analytics"] .thumb-actions a:hover {
@@ -320,7 +320,7 @@ table {
 #main[data-category=".productivity"] #content-header {
   background-image: url(https://d13yacurqjgara.cloudfront.net/users/92955/screenshots/2318620/attachments/440464/endpoint.jpg); }
   #main[data-category=".productivity"] #content-header:before {
-    background-color: rgba(119, 76, 96, 0.75); }
+    background-color: rgba(119, 76, 96, 0.95); }
 #main[data-category=".productivity"] .thumb-actions {
   background-color: rgba(119, 76, 96, 0.95); }
   #main[data-category=".productivity"] .thumb-actions a:hover {
@@ -332,7 +332,7 @@ table {
 #main[data-category=".web-hosting"] #content-header {
   background-image: url(https://d13yacurqjgara.cloudfront.net/users/6541/screenshots/997791/dribb.png); }
   #main[data-category=".web-hosting"] #content-header:before {
-    background-color: rgba(47, 153, 231, 0.75); }
+    background-color: rgba(47, 153, 231, 0.95); }
 #main[data-category=".web-hosting"] .thumb-actions {
   background-color: rgba(47, 153, 231, 0.95); }
   #main[data-category=".web-hosting"] .thumb-actions a:hover {
@@ -344,7 +344,7 @@ table {
 #main[data-category=".miscellaneous"] #content-header {
   background-image: url(https://d13yacurqjgara.cloudfront.net/users/6541/screenshots/997791/dribb.png); }
   #main[data-category=".miscellaneous"] #content-header:before {
-    background-color: rgba(231, 176, 61, 0.75); }
+    background-color: rgba(231, 176, 61, 0.95); }
 #main[data-category=".miscellaneous"] .thumb-actions {
   background-color: rgba(231, 176, 61, 0.95); }
   #main[data-category=".miscellaneous"] .thumb-actions a:hover {

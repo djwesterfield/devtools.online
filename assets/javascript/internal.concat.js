@@ -42,113 +42,6 @@ window.mobile = {
 
 };
 
-window.paceOptions = {
-
-  ajax: true,
-  initialRate: 0,
-  startOnPageLoad : false,
-  target: '#content-header',
-  minTime: 1000,
-  ghostTime:500,
-  eventLag: true,
-  catchupTime: 300,
-  elements: {
-
-    selectors: ['.tool']
-
-  }
-
-};
-(function(KonamiCode, $, undefined) {
-
-    'use strict';
-
-    KonamiCode.counter = 0;
-    KonamiCode.started = false;
-    KonamiCode.keyPressed = null;
-    KonamiCode.combo = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
-
-    KonamiCode.handler = (function() {
-
-        function KonamiListener() {
-
-            var _this = this;
-
-            this.beginCode = function(event) {
-
-              KonamiCode.keyPressed = event.which || event.keyCode;
-
-              if(!KonamiCode.started) {
-
-                KonamiCode.started = KonamiCode.keyPressed == 38 ? true : false;
-
-              }
-
-              if(KonamiCode.started) {
-
-                if(KonamiCode.combo[KonamiCode.counter] == KonamiCode.keyPressed) {
-
-                  KonamiCode.counter++;
-
-                }else{
-
-                  _this.startOver();
-
-                }
-
-                if(KonamiCode.counter == 10) {
-
-                  _this.easterEgg();
-
-                }
-
-              }else{
-
-                _this.startOver();
-
-              }
-
-            };
-
-
-            this.startOver = function() {
-
-              KonamiCode.counter = 0;
-              KonamiCode.started = false;
-              KonamiCode.keyPressed = null;
-
-            };
-
-            this.easterEgg = function() {
-
-              printSuccess('You entered the Konami code!', 'Easter egg stuff can go here');
-
-              _this.startOver();
-
-            };
-
-            this.listen = function() {
-
-                $(document).on('keydown', function(event) {
-
-                  _this.beginCode(event);
-
-                });
-
-                return this;
-
-            };
-
-            return this.listen();
-
-        }
-
-        return new KonamiListener();
-
-    }());
-
-}(window.KonamiCode = window.KonamiCode || {}, jQuery));
-
 /**
  * Think Pixels Co. Template System
  * @copyright Think Pixels Co.
@@ -452,7 +345,7 @@ window.paceOptions = {
 
             this.scrollToTop = function(callback) {
 
-              var scrollSpeed = $window.scrollTop() > 0 ? 1000 : 0;
+              var scrollSpeed = $window.scrollTop() > 0 ? $window.scrollTop() * 1.5 : 0;
 
               $('html, body').animate({
 
@@ -490,8 +383,6 @@ window.paceOptions = {
                     var tagThis   = 0;
 
                     $.each(category.tags, function(id, tag) {
-
-                      // console.log(tag);
 
                       var filters = tag.hash === 'everything' ? 'all, .' + category.hash : '.' + category.hash + '.' + tag.hash ;
 
@@ -631,8 +522,6 @@ window.paceOptions = {
 
               if(DevTools.Authenticated) {
 
-                console.log('Authenticated: ' + DevTools.User.id);
-
                 DevTools.Firebase.child('users/' + DevTools.User.id).once('value', function(snapshot) {
 
                   var likes     = snapshot.val().likes;
@@ -640,11 +529,7 @@ window.paceOptions = {
 
                   if(likes) {
 
-                    console.log('show user likes:');
-
                     $.each(likes, function(toolID, data) {
-
-                      console.log($('.tool[data-id="' + toolID + '"]').length);
 
                       $('.tool[data-id="' + toolID + '"]').find('.tool-action[data-action="heart"]').toggleActionStatus('like');
 
@@ -765,8 +650,6 @@ window.paceOptions = {
 
             this.addNewTag = function() {
 
-              console.log(DevTools.Category);
-
               var popup = prompt('Name the tag:');
 
               if(popup) {
@@ -792,8 +675,6 @@ window.paceOptions = {
 
             this.clearLikesAndFavorites = function() {
 
-              console.log('Likes and favorites have been cleared');
-
               $btnAction.removeClass('liked').removeClass('favorited');
 
               $('.tool-action[data-action="heart"] .fa').removeClass('fa-heart').addClass('fa-heart-o');
@@ -804,8 +685,6 @@ window.paceOptions = {
             $.fn.toggleActionStatus = function(action) {
 
               var element = $(this);
-
-              // console.log(element);
 
               switch(action) {
 
@@ -885,8 +764,6 @@ window.paceOptions = {
 
                   var toolFavorites = snapshot.val().favorites;
                   var newFavorites  = toolFavorites;
-
-                  console.log(toolFavorites);
 
                   if(element.hasClass('favorited')) {
 
@@ -1023,10 +900,6 @@ window.paceOptions = {
               $('.tag-selector[data-category="' + DevTools.Category + '"]').show();
               $('.tag-selector[data-category="' + DevTools.Category + '"][data-tag="' + DevTools.Tag + '"]').attr('data-active', true);
 
-              console.log('Cat: ' + DevTools.Category);
-              console.log('Tag: ' + DevTools.Tag);
-              console.log('\r\n');
-
               $contentHeader.find('#tag').text('#' + DevTools.Tag.replace('-', ' '));
 
             };
@@ -1111,13 +984,7 @@ window.paceOptions = {
 
                   _this.authenticated(false);
 
-                  printSuccess('Success:', 'You have been logged out');
-
                   location.reload();
-
-                }else{
-
-                  printError('Error logging out:', 'Not logged in');
 
                 }
 
@@ -1137,15 +1004,11 @@ window.paceOptions = {
 
                       _this.authenticated(true, authData);
 
-                      printSuccess('Successfully logged in:', authData.twitter.displayName);
-
                       location.reload();
 
                     }else{
 
                       _this.authenticated(false);
-
-                      printError('Authentication error:', error);
 
                     }
 
@@ -1238,7 +1101,6 @@ window.paceOptions = {
 
                         });
 
-
                         $toolsList.mixItUp({
 
                           load: {
@@ -1306,8 +1168,6 @@ window.paceOptions = {
 
                           _this.authenticated(true, authData);
 
-                          printSuccess('Authenticated user:', authData.twitter.displayName);
-
                         }else{
 
                           _this.authenticated(false);
@@ -1329,9 +1189,11 @@ window.paceOptions = {
                       if(DevTools.Category) { _this.updateCategory(); }
                       if(DevTools.Tag)      { _this.updateTag(); }
 
-                      console.log(DevTools.Filter);
+                      _this.scrollToTop(function() {
 
-                      $toolsList.mixItUp('filter', DevTools.Filter);
+                        $toolsList.mixItUp('filter', DevTools.Filter);
+
+                      });
 
                     });
 

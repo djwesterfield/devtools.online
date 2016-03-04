@@ -1,6 +1,6 @@
 <!doctype html>
 
-<!--[if lt IE 9]>
+<!--[if lt IE 10]>
 <html itemscope itemtype="http://schema.org/WebPage" lang="en" class="ie">
 <![endif]-->
 
@@ -39,30 +39,30 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
+{{googlefonts}}
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+{{stylesheets}}
 
 <link rel="icon" href="{{favicon}}">
 <link rel="manifest" href="{{manifest}}">
 <link rel="canonical" href="{{url}}">
 
-{{godmode}}
-{{javascript_head}}
-
-{{googlefonts}}
-{{stylesheets}}
-
 </head>
 <body>
 
-<!--[if lt IE 9]><div id="main" itemprop="mainContentOfPage"><![endif]-->
+<!--[if lt IE 10]><div id="main" itemprop="mainContentOfPage"><![endif]-->
 <!--[if gt IE 9]><!--><main id="main" itemprop="mainContentOfPage" tabindex="-1"><!--<![endif]-->
 
 {{include:header}}
 {{include:sidebar}}
 {{include:content}}
 
-<!--[if lt IE 9]></div><![endif]-->
+<!--[if lt IE 10]></div><![endif]-->
 <!--[if gt IE 9]><!--></main><!--<![endif]-->
+
+{{godmode}}
 
 {{javascript_body}}
 {{google_tracking}}

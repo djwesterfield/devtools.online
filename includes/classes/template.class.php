@@ -85,6 +85,7 @@ class Template {
   public function load_css($files) {
 
     global $css_response;
+
     $output = '';
 
     if(DEV_MODE === true) {
@@ -106,19 +107,7 @@ class Template {
 
         if(file_exists($root.$file)) {
 
-          // stylesheet loaded successfully
-          if($data['log'] === true) {
-            $output .= log_event('success', $css_response, '{{'.$file.'}} loaded successfully', $source.$file);
-          }
-
           $output .= '<link rel="stylesheet" href="'.$source.$file.'">';
-
-        }else{
-
-          // stylesheet failed to load
-          if($data['log'] === true) {
-            $output .= log_event('error', $css_response, '{{'.$file.'}} failed to load', $source.$file);
-          }
 
         }
 
@@ -127,21 +116,7 @@ class Template {
     }else{
 
       $file = 'lib.compiled.min.css';
-
-      if(file_exists(STYLESHEETS_INTERNAL_ROOT.$file)) {
-
-        // stylesheet loaded successfully
-        $output .= log_event('success', $css_response, '{{'.$file.'}} loaded successfully', STYLESHEETS_INTERNAL.$file);
-
-        $output .= '<link rel="stylesheet" href="'.STYLESHEETS_INTERNAL.$file.'">';
-
-
-      }else{
-
-        // stylesheet failed to load
-        $output .= log_event('error', $css_response, '{{'.$file.'}} failed to load', STYLESHEETS_INTERNAL.$file);
-
-      }
+      $output .= '<link rel="stylesheet" href="'.STYLESHEETS_INTERNAL.$file.'">';
 
     }
 
@@ -154,58 +129,53 @@ class Template {
     global $js_response;
     $output = '';
 
-    foreach($files as $file => $data) {
+    if(DEV_MODE === true) {
 
-      $file = $file.'.js';
+      foreach($files as $file => $data) {
 
-      if (!$data['type'] || $data['type'] === null) {
-        $source = JAVASCRIPT;
-        $root   = JAVASCRIPT_ROOT;
-      }else if($data['type'] === 'internal') {
-        $source = JAVASCRIPT_INTERNAL;
-        $root   = JAVASCRIPT_INTERNAL_ROOT;
-      }else if($data['type'] === 'external') {
-        $source = JAVASCRIPT_EXTERNAL;
-        $root   = JAVASCRIPT_EXTERNAL_ROOT;
-      }else if($data['type'] === 'dev') {
-        $source = JAVASCRIPT.'dev/';
-        $root   = JAVASCRIPT_ROOT.'dev/';
-      }
+        $file = $file.'.js';
 
-      if(file_exists($root.$file)) {
+        if (!$data['type'] || $data['type'] === null) {
+          $source = JAVASCRIPT;
+          $root   = JAVASCRIPT_ROOT;
+        }else if($data['type'] === 'internal') {
+          $source = JAVASCRIPT_INTERNAL;
+          $root   = JAVASCRIPT_INTERNAL_ROOT;
+        }else if($data['type'] === 'external') {
+          $source = JAVASCRIPT_EXTERNAL;
+          $root   = JAVASCRIPT_EXTERNAL_ROOT;
+        }else if($data['type'] === 'dev') {
+          $source = JAVASCRIPT.'dev/';
+          $root   = JAVASCRIPT_ROOT.'dev/';
+        }
 
-        if($data['condition'] !== null) {
+        if(file_exists($root.$file)) {
 
-          list($open, $close) = explode('{file}', $data['condition']);
+          if($data['condition'] !== null) {
 
-          // javascript file loaded successfully
-          if($data['log'] === true) {
-              $output .= log_event('success', $js_response, '{{'.$file.'}} loaded successfully', $source.$file);
+            list($open, $close) = explode('{file}', $data['condition']);
+
+            $output .= $open;
+            $output .= '<script src="'.$source.$file.'"></script>';
+            $output .= $close;
+
+          }else{
+
+            $output .= '<script src="'.$source.$file.'"></script>';
+
           }
-
-          $output .= $open;
-          $output .= '<script src="'.$source.$file.'"></script>';
-          $output .= $close;
-
-        }else{
-
-          // javascript file loaded successfully
-          if($data['log'] === true) {
-              $output .= log_event('success', $js_response, '{{'.$file.'}} loaded successfully', $source.$file);
-          }
-
-          $output .= '<script src="'.$source.$file.'"></script>';
 
         }
 
-      }else{
-
-        // javascript file could not be found
-        if($data['log'] === true) {
-          $output .= log_event('error', $js_response, '{{'.$file.'}} failed to load', $source.$file);
-        }
-
       }
+
+    }else{
+
+      $file_external = 'external.min.js';
+      $file_internal = 'internal.min.js';
+
+      $output .= '<script src="'.JAVASCRIPT.$file_external.'"></script>';
+      $output .= '<script src="'.JAVASCRIPT.$file_internal.'"></script>';
 
     }
 

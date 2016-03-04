@@ -5,7 +5,7 @@ include('includes/init.inc.php');
 /* start the template engine */
 $home = new Template('home');
 
-/* load javascript into the page header */
+/* load javascript into the page header
 $home->set('javascript_head', $home->load_js([
 
   'console.min' => [
@@ -27,15 +27,7 @@ $home->set('javascript_head', $home->load_js([
   'jquery-2.1.4.min' => [
 
     'type'      => 'external',
-    'condition' => '<!--[if gt IE 9]><!-->{file}<!--<![endif]-->',
-    'log'       => true
-
-  ],
-
-  'jquery-1.11.3.min' => [
-
-    'type'      => 'external',
-    'condition' => '<!--[if lt IE 9]>{file}<!--[endif]-->',
+    'condition' => null,
     'log'       => true
 
   ],
@@ -56,7 +48,7 @@ $home->set('javascript_head', $home->load_js([
 
   ]
 
-]));
+])); */
 
 $home->set('googlefonts', $home->googlefonts([
 
@@ -101,6 +93,38 @@ $home->_include('footer');
 
 /* load javascript into the page body */
 $home->set('javascript_body', $home->load_js([
+
+  '_globals' => [
+
+    'type'      => 'internal',
+    'condition' => null,
+    'log'       => true
+
+  ],
+
+  '_jquery-2.1.4.min' => [
+
+    'type'      => 'external',
+    'condition' => null,
+    'log'       => true
+
+  ],
+
+  'console.min' => [
+
+    'type'      => 'dev',
+    'condition' => null,
+    'log'       => false
+
+  ],
+
+  'godmode' => [
+
+    'type'      => 'dev',
+    'condition' => null,
+    'log'       => false
+
+  ],
 
   'ga.min' => [
 
@@ -149,14 +173,6 @@ $home->set('javascript_body', $home->load_js([
     'log'       => true
 
   ],
-
-  'konami' => [
-
-    'type'      => 'internal',
-    'condition' => null,
-    'log'       => false
-
-  ]
 
 ]));
 

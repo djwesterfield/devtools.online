@@ -301,7 +301,7 @@
 
             this.scrollToTop = function(callback) {
 
-              var scrollSpeed = $window.scrollTop() > 0 ? 1000 : 0;
+              var scrollSpeed = $window.scrollTop() > 0 ? $window.scrollTop() * 1.5 : 0;
 
               $('html, body').animate({
 
@@ -339,8 +339,6 @@
                     var tagThis   = 0;
 
                     $.each(category.tags, function(id, tag) {
-
-                      // console.log(tag);
 
                       var filters = tag.hash === 'everything' ? 'all, .' + category.hash : '.' + category.hash + '.' + tag.hash ;
 
@@ -480,8 +478,6 @@
 
               if(DevTools.Authenticated) {
 
-                console.log('Authenticated: ' + DevTools.User.id);
-
                 DevTools.Firebase.child('users/' + DevTools.User.id).once('value', function(snapshot) {
 
                   var likes     = snapshot.val().likes;
@@ -489,11 +485,7 @@
 
                   if(likes) {
 
-                    console.log('show user likes:');
-
                     $.each(likes, function(toolID, data) {
-
-                      console.log($('.tool[data-id="' + toolID + '"]').length);
 
                       $('.tool[data-id="' + toolID + '"]').find('.tool-action[data-action="heart"]').toggleActionStatus('like');
 
@@ -614,8 +606,6 @@
 
             this.addNewTag = function() {
 
-              console.log(DevTools.Category);
-
               var popup = prompt('Name the tag:');
 
               if(popup) {
@@ -641,8 +631,6 @@
 
             this.clearLikesAndFavorites = function() {
 
-              console.log('Likes and favorites have been cleared');
-
               $btnAction.removeClass('liked').removeClass('favorited');
 
               $('.tool-action[data-action="heart"] .fa').removeClass('fa-heart').addClass('fa-heart-o');
@@ -653,8 +641,6 @@
             $.fn.toggleActionStatus = function(action) {
 
               var element = $(this);
-
-              // console.log(element);
 
               switch(action) {
 
@@ -734,8 +720,6 @@
 
                   var toolFavorites = snapshot.val().favorites;
                   var newFavorites  = toolFavorites;
-
-                  console.log(toolFavorites);
 
                   if(element.hasClass('favorited')) {
 
@@ -872,10 +856,6 @@
               $('.tag-selector[data-category="' + DevTools.Category + '"]').show();
               $('.tag-selector[data-category="' + DevTools.Category + '"][data-tag="' + DevTools.Tag + '"]').attr('data-active', true);
 
-              console.log('Cat: ' + DevTools.Category);
-              console.log('Tag: ' + DevTools.Tag);
-              console.log('\r\n');
-
               $contentHeader.find('#tag').text('#' + DevTools.Tag.replace('-', ' '));
 
             };
@@ -960,13 +940,7 @@
 
                   _this.authenticated(false);
 
-                  printSuccess('Success:', 'You have been logged out');
-
                   location.reload();
-
-                }else{
-
-                  printError('Error logging out:', 'Not logged in');
 
                 }
 
@@ -986,15 +960,11 @@
 
                       _this.authenticated(true, authData);
 
-                      printSuccess('Successfully logged in:', authData.twitter.displayName);
-
                       location.reload();
 
                     }else{
 
                       _this.authenticated(false);
-
-                      printError('Authentication error:', error);
 
                     }
 
@@ -1087,7 +1057,6 @@
 
                         });
 
-
                         $toolsList.mixItUp({
 
                           load: {
@@ -1155,8 +1124,6 @@
 
                           _this.authenticated(true, authData);
 
-                          printSuccess('Authenticated user:', authData.twitter.displayName);
-
                         }else{
 
                           _this.authenticated(false);
@@ -1178,9 +1145,11 @@
                       if(DevTools.Category) { _this.updateCategory(); }
                       if(DevTools.Tag)      { _this.updateTag(); }
 
-                      console.log(DevTools.Filter);
+                      _this.scrollToTop(function() {
 
-                      $toolsList.mixItUp('filter', DevTools.Filter);
+                        $toolsList.mixItUp('filter', DevTools.Filter);
+
+                      });
 
                     });
 

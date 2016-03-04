@@ -41,21 +41,3 @@ window.mobile = {
   },
 
 };
-
-window.paceOptions = {
-
-  ajax: true,
-  initialRate: 0,
-  startOnPageLoad : false,
-  target: '#content-header',
-  minTime: 1000,
-  ghostTime:500,
-  eventLag: true,
-  catchupTime: 300,
-  elements: {
-
-    selectors: ['.tool']
-
-  }
-
-};
