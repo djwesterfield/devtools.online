@@ -325,7 +325,7 @@
 
             this.scrollToTop = function(callback) {
 
-              var scrollSpeed = $window.scrollTop() > 0 ? $window.scrollTop() * 1.5 : 0;
+              /* var scrollSpeed = $window.scrollTop() > 0 ? 1000 : 0;
 
               $('html, body').animate({
 
@@ -337,10 +337,11 @@
 
               });
 
+              */
+
+              _this.runCallback(callback);
+
             };
-
-
-
 
             this.loadCategories = function(callback) {
 
@@ -450,7 +451,7 @@
 
                       $.each(tool.tags, function(key, tag) {
 
-                        output += '<a class="tool-filter" data-filter=".' + tool.category + '.' + tag + '" href="' + DevTools.Location + '#!/' + tool.category + '/' + tag + '/' + '">#' + tag + '</a>';
+                        output += '<a itemprop="relatedLink genre" class="tool-filter" data-filter=".' + tool.category + '.' + tag + '" href="' + DevTools.Location + '#!/' + tool.category + '/' + tag + '/' + '">#' + tag + '</a>';
 
                       });
 
@@ -461,7 +462,7 @@
                     var like_tip = tool.likes < 1 ? 'Be the first to like this tool' : 'Like this tool';
                     var share_text_parsed = encodeURIComponent(toolDescription.trim());
 
-                    var output  = '<li class="mix ' + tool.category + ' ' + tagClasses + ' ' + tool.hash + '" data-likes="'+tool.likes+'" data-saves="'+tool.favorites+'"><div class="tool" data-id="' + id + '" data-hash="' + tool.hash + '" data-category="' + tool.category + '" data-tags="' + tool.tags + '">';
+                    var output  = '<li itemscope itemtype="http://schema.org/WebPage" class="mix ' + tool.category + ' ' + tagClasses + ' ' + tool.hash + '" data-likes="'+tool.likes+'" data-saves="'+tool.favorites+'"><div class="tool" data-id="' + id + '" data-hash="' + tool.hash + '" data-category="' + tool.category + '" data-tags="' + tool.tags + '">';
                         output +=   '<div class="thumbnail" style=background-image:url(' + tool.thumbnail + ');"">';
                         output +=     '<div class="thumb-actions">';
                         output +=       '<a title="' + tool.url + '" href="' + tool.url + '?ref=devtools" rel="external" target="new"><i class="fa fa-link"></i></a>';
@@ -469,10 +470,10 @@
                         output +=     '</div>';
                         output +=     '<!-- <img alt="' + imageAlt + '" src="' + tool.thumbnail + '"> -->';
                         output +=   '</div>';
-                        output +=   '<div class="details">';
-                        output +=     '<h2><a class="tool-link" href="' + tool.url + '?ref=devtools" rel="external" target="new" title="' + tool.url + '">' + tool.name + '</a></h2>';
+                        output +=   '<div itemprop="mainContentOfPage" class="details">';
+                        output +=     '<h2><a itemprop="significantLink" class="tool-link" href="' + tool.url + '?ref=devtools" rel="external" target="new" title="' + tool.url + '">' + tool.name + '</a></h2>';
                         output +=     '<p>' + tagList() + '</p>';
-                        output +=     '<p class="short-description edit-desc" title="' + toolDescription + '">' + toolDescription + '</p>';
+                        output +=     '<p itemprop="about" class="short-description edit-desc" title="' + toolDescription + '">' + toolDescription + '</p>';
                         output +=   '</div>';
                         output +=   '<nav class="actions">';
                         output +=     '<li title="' + like_tip + '"><button class="tool-action" data-action="heart"><i class="heart"></i><span>' + tool.likes + '</span></button></li>';

@@ -2,14 +2,13 @@ aside {
 
   z-index: 100;
 
-  top:  $header_height;
   left:   0px;
   bottom: 0px;
-
+  top:  $header_height;
+  
   position: fixed;
+  width: $sidebar_width;
   background-color: $sidebar_background;
-
-  @include size($sidebar_width, 100%);
 
   @media(max-width: $mobile_break) {
 
@@ -131,10 +130,12 @@ aside {
 
     &#tag-nav {
 
-      left: $sidebar_nav_size;
+      top: 0px;
       right: 0px;
       bottom: 0px;
       padding: 1em;
+      overflow-y: auto;
+      left: $sidebar_nav_size;
 
       @media(max-width: $mobile_break) {
 

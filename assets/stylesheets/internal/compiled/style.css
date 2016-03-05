@@ -221,6 +221,47 @@ table {
   border-spacing: 0;
   border-collapse: collapse; }
 
+/*Code for Customized Scrollbars begins here! */
+::-webkit-scrollbar {
+  width: 5px;
+  /* Width of the vertical scrollbar button */
+  height: 5px;
+  /* Height of the horizontal scrollbar button */ }
+
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+  display: none;
+  height: 10px;
+  /* Height of the entiry vertical scrollbar */
+  width: 10px;
+  /* Width of the entiry horizontal scrollbar */ }
+
+::-webkit-scrollbar-button:vertical:increment {
+  background-color: none;
+  /* Background of the Scrollbar */ }
+
+::-webkit-scrollbar-button:horizontal:increment {
+  background-color: none;
+  /* Background of the Scrollbar */ }
+
+::-webkit-scrollbar-track-piece {
+  background-color: #ccc;
+  /* Background of the track */
+  -webkit-border-radius: 0px;
+  /* Border Radius of the track */ }
+
+::-webkit-scrollbar-thumb:vertical {
+  background-color: #999;
+  /* Background of Thumb */
+  -webkit-border-radius: 0px;
+  /* Border Radius of the Scrollbar */ }
+
+::-webkit-scrollbar-thumb:horizontal {
+  background-color: #999;
+  /* Background of Thumb */
+  -webkit-border-radius: 0px;
+  /* Border Radius of the Scrollbar */ }
+
 #main[data-category=".home"] .category-selector[data-active="true"] {
   border-color: #3AAFB9; }
 #main[data-category=".home"] #content-header {
@@ -484,8 +525,8 @@ table {
             font-size: 18px; }
     #page-header #header-container #search-form {
       float: left;
-      min-width: 35%;
-      max-width: 50%;
+      min-width: 50%;
+      max-width: 70%;
       position: relative;
       display: inline-block;
       width: auto;
@@ -535,13 +576,12 @@ table {
 
 aside {
   z-index: 100;
-  top: 80px;
   left: 0px;
   bottom: 0px;
+  top: 80px;
   position: fixed;
-  background-color: #242b34;
   width: 320px;
-  height: 100%; }
+  background-color: #242b34; }
   @media (max-width: 600px) {
     aside {
       top: 0px;
@@ -622,10 +662,12 @@ aside {
                 font-size: 2em;
                 margin-bottom: 5px; } }
     aside nav#tag-nav {
-      left: 100px;
+      top: 0px;
       right: 0px;
       bottom: 0px;
-      padding: 1em; }
+      padding: 1em;
+      overflow-y: auto;
+      left: 100px; }
       @media (max-width: 600px) {
         aside nav#tag-nav {
           left: 0px;

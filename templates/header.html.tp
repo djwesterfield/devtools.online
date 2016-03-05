@@ -15,12 +15,14 @@
 
   <div id="header-container">
 
+    <!--
     <nav id="header-main-nav">
 
       <li><a class="main-nav-btn circle"><span class="fa fa-question"></span></a></li>
       <li><a class="main-nav-btn">Suggest A New Tool</a></li>
 
     </nav>
+    -->
 
     <div id="search-form">
 

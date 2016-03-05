@@ -15,10 +15,12 @@
 <meta charset="utf-8">
 <meta name="robots" content="noodp">
 
-<meta itemprop="creator" name="web_author" content="Think Pixels Co.">
+<meta itemprop="creator" name="web_author" content="Sebastian Inman">
 <meta itemprop="about" name="description" content="{{description}}">
 <meta itemprop="keywords" name="keywords" content="{{keywords}}">
 <meta itemprop="image" itemprop="thumbnailUrl" cotent="{{image}}">
+
+<meta name="application-name" content="{{title}}">
 
 <meta name="og:type" content="website">
 <meta name="og:url" content="{{url}}">
@@ -27,8 +29,8 @@
 <meta name="og:description" content="{{og:description}}">
 
 <meta name="twitter:card" content="{{twitter:card}}">
-<meta name="twitter:site" content="@thinkpixels">
-<meta name="twitter:creator" content="@thinkpixels">
+<meta name="twitter:site" content="@sebastian_inman">
+<meta name="twitter:creator" content="@sebastian_inman">
 <meta name="twitter:url" content="{{url}}">
 <meta name="twitter:image" content="{{twitter:image}}">
 <meta name="twitter:title" content="{{twitter:title}}">
@@ -47,7 +49,6 @@
 
 <link rel="icon" href="{{favicon}}">
 <link rel="manifest" href="{{manifest}}">
-<link rel="canonical" href="{{url}}">
 
 </head>
 <body>
