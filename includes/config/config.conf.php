@@ -10,6 +10,9 @@
 
 $DEV_MODE = false;
 
+$PRODUCTION = false;
+$PRODUCTION_URL = 'https://www.devtools.online/';
+
 /**
   * Temporary development path that the
   * boilerplate currently resides in.
@@ -17,7 +20,7 @@ $DEV_MODE = false;
   * empty string before production.
   */
 
-$TEMP_PATH = 'devtools.online/';
+$TEMP_PATH = $PRODUCTION ? '' : 'devtools.online/';
 
 /**
   * Google Analytics tracking codes.

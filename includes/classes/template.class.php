@@ -283,7 +283,8 @@ class Template {
 
   public function god_mode() {
 
-    $this->values['godmode'] = DEV_MODE === true ? '<script>window.developerMode = true;</script>' : '';
+    $this->values['godmode']    = DEV_MODE   === true ? '<script>window.developerMode  = true;</script>' : '';
+    $this->values['production'] = PRODUCTION === true ? '<script>window.productionMode = true;</script>' : '';
 
   }
 

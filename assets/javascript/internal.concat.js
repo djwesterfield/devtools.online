@@ -67,7 +67,7 @@ window.mobile = {
     DevTools.Description = 'A massive collection of online web development tools';
     DevTools.Timestamp   = +new Date;
 
-    DevTools.Location = 'http://localhost/devtools.online/';
+    DevTools.Location = window.productionMode ? 'https://www.devtools.online/' : 'http://localhost/devtools.online/';
     DevTools.Firebase = new Firebase('https://devtoolsonline.firebaseio.com/');
 
     DevTools.Authenticated;

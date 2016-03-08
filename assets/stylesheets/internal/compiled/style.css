@@ -953,7 +953,7 @@ aside {
   100% {
     background-position: right; } }
               #content #tools-list li .tool .actions li .tool-action[data-action="heart"] .heart {
-                background: url("../../../images/heart_animation.png");
+                background: url("https://www.devtools.online/assets/images/heart_animation.png");
                 background-position: left;
                 background-repeat: no-repeat;
                 cursor: pointer;

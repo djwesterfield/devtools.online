@@ -64,6 +64,7 @@
 <!--[if gt IE 9]><!--></main><!--<![endif]-->
 
 {{godmode}}
+{{production}}
 
 {{javascript_body}}
 {{google_tracking}}

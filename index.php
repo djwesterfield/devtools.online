@@ -5,51 +5,6 @@ include('includes/init.inc.php');
 /* start the template engine */
 $home = new Template('home');
 
-/* load javascript into the page header
-$home->set('javascript_head', $home->load_js([
-
-  'console.min' => [
-
-    'type'      => 'dev',
-    'condition' => null,
-    'log'       => false
-
-  ],
-
-  'godmode' => [
-
-    'type'      => 'dev',
-    'condition' => null,
-    'log'       => false
-
-  ],
-
-  'jquery-2.1.4.min' => [
-
-    'type'      => 'external',
-    'condition' => null,
-    'log'       => true
-
-  ],
-
-  'modernizr.min' => [
-
-    'type'      => 'external',
-    'condition' => '<!--[if lt IE 9]>{file}<!--[endif]-->',
-    'log'       => true
-
-  ],
-
-  'globals' => [
-
-    'type'      => 'internal',
-    'condition' => null,
-    'log'       => true
-
-  ]
-
-])); */
-
 $home->set('googlefonts', $home->googlefonts([
 
   'Open+Sans' => [

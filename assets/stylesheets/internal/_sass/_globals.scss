@@ -2,6 +2,9 @@
 @import '_colors';
 @import '_reset';
 
+$path_base: 'https://www.devtools.online/';
+$path_images: $path_base + 'assets/images/';
+
 $loading_height: 8px;
 
 $open_sans: 'Open Sans', sans-serif;

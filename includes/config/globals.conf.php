@@ -1,6 +1,7 @@
 <?php
 
 define('DEV_MODE', $DEV_MODE);
+define('PRODUCTION', $PRODUCTION);
 
 define('CRYPTO_KEY', 'syCzXjxJAzrFX5re');
 define('CRYPTO_METHOD', 'aes128');

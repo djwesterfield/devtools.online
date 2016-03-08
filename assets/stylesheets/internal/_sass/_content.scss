@@ -568,7 +568,7 @@
 
                 .heart {
 
-                  background: url('../../../images/heart_animation.png');
+                  background: url('#{$path_images}heart_animation.png');
                   background-position: left;
                   background-repeat: no-repeat;
                   cursor: pointer;
