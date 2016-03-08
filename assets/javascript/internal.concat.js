@@ -189,7 +189,6 @@ window.mobile = {
               if(is_mobile) {
 
 
-
               }else{
 
                 if(window.size.x >= 1200) {
@@ -510,12 +509,12 @@ window.mobile = {
                     var tool_link = tool.showRef === true ? tool.url + '?ref=devtools' : tool.url;
 
                     var output  = '<li itemscope itemtype="http://schema.org/WebPage" class="mix ' + tool.category + ' ' + tagClasses + ' ' + tool.hash + '" data-likes="'+tool.likes+'" data-saves="'+tool.favorites+'"><div class="tool" data-id="' + id + '" data-hash="' + tool.hash + '" data-category="' + tool.category + '" data-tags="' + tool.tags + '">';
-                        output +=   '<div class="thumbnail" style=background-image:url(' + tool.thumbnail + ');"">';
+                        output +=   '<div class="thumbnail" style="/*background-image:url(' + tool.thumbnail + ');*/">';
                         output +=     '<div class="thumb-actions">';
                         output +=       '<a title="' + tool.url + '" href="' + tool_link + '" rel="external" target="new"><i class="fa fa-link"></i></a>';
                         output +=       '<a class="more-info tool-link" data-tool="' + tool.hash + '" href="' + DevTools.Location + '#!/' + DevTools.Category + '/' + DevTools.Tag + '/' + tool.hash + '/" title="More information about ' + tool.name + '"><i class="fa fa-info"></i></a>';
                         output +=     '</div>';
-                        output +=     '<!-- <img alt="' + imageAlt + '" src="' + tool.thumbnail + '"> -->';
+                        output +=     '<img alt="' + imageAlt + '" src="' + tool.thumbnail + '">';
                         output +=   '</div>';
                         output +=   '<div itemprop="mainContentOfPage" class="details">';
                         output +=     '<h2><a itemprop="significantLink" class="tool-link" href="' + tool_link + '" rel="external" target="new" title="' + tool.url + '">' + tool.name + '</a></h2>';
@@ -525,7 +524,7 @@ window.mobile = {
                         output +=   '<nav class="actions">';
                         output +=     '<li title="' + like_tip + '"><button class="tool-action" data-action="heart"><i class="heart"></i><span>' + tool.likes + '</span></button></li>';
                         output +=     '<li title="Add this tool to your favorites"><button class="tool-action" data-action="favorite"><i class="fa fa-bookmark-o"></i><span>' + tool.favorites + '</span></button></li>';
-                        output +=     '<li title="Share this tool online"><button class="tool-action" data-action="share" data-url="http://twitter.com/share?text=' + share_text_parsed + '&url=' + tool_link + '&via=devtoolsonline"><i class="fa fa-share-alt"></i><span>Share</span></button></li>';
+                        output +=     '<li title="Share ' + tool.name + ' on Twitter"><button class="tool-action" data-action="share" data-url="http://twitter.com/share?text=' + share_text_parsed + '&url=' + tool_link + '&via=devtoolsonline"><i class="fa fa-share-alt"></i><span>Share</span></button></li>';
                         output +=   '</nav>';
                         output += '</div></li>';
 
@@ -705,7 +704,21 @@ window.mobile = {
 
             this.clearLikesAndFavorites = function() {
 
-              $btnAction.removeClass('liked').removeClass('favorited');
+              if($btnAction) {
+
+                if($btnAction.hasClass('liked')) {
+
+                  $btnAction.removeClass('liked');
+
+                }
+
+                if($btnAction.hasClass('favorited')) {
+
+                  $btnAction.removeClass('favorited');
+
+                }
+
+              }
 
               $('.tool-action[data-action="heart"] .fa').removeClass('fa-heart').addClass('fa-heart-o');
               $('.tool-action[data-action="favorite"] .fa').removeClass('fa-star').addClass('fa-star-o');
@@ -1172,6 +1185,11 @@ window.mobile = {
 
                           },
 
+                          animation: {
+                            enable: true,
+                            effects: 'fade stagger'
+                          },
+
                           selectors: {
 
                             target: '.mix',
@@ -1209,10 +1227,25 @@ window.mobile = {
 
                               if(DevTools.Search && DevTools.Seach != '') {
 
-                                $toolsList.mixItUp('filter', '.' + DevTools.Search);
-
                                 $contentHeader.find('#category').text('Search');
                                 $contentHeader.find('#tag').text('#' + DevTools.Search);
+
+                                $toolsList.mixItUp('filter', '.' + DevTools.Search).on('mixEnd', function(e, state) {
+
+                                  var toolsVisible = state.totalShow;
+
+                                  if(!toolsVisible || toolsVisible == 0) {
+
+                                    console.log('NO TOOLS FOUND!');
+
+                                  }else{
+
+                                    console.log(toolsVisible + ' TOOLS FOUND!');
+
+                                  }
+
+                                });
+
 
                               }else{
 

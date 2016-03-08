@@ -64,6 +64,13 @@ $home->set('googlefonts', $home->googlefonts([
 /* load stylesheets into the page header */
 $home->set('stylesheets', $home->load_css([
 
+  'font-awesome.min' => [
+
+    'type' => 'external',
+    'log'  => true
+
+  ],
+
   'reset' => [
 
     'type' => 'internal',

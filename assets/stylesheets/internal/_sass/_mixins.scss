@@ -10,37 +10,10 @@
     }
 }
 
-/*!
- *
- * Global Sass Functions
- *
- * An assortment of different functions
- * that will be used throughout the project.
- *
- */
-
-/* set rem font size with pixel fallback */
 @function rem($size) {
     $rem: $size / 16px;
     @return $rem * 1rem;
 }
-
-
-
-/*!
- *
- * Append vendor prefixes to css styles
- *
- * $a = map of declarations
- * $b = list of prefixes    ["webkit moz ms o"]
- * $c = property of item
- * $d = value of property
- * $e = vendor to output
- *
- * To absolute center an element, print the following:
- * @include prefix((declaration: property), prefixes);
- *
- */
 
 @mixin prefix($a, $b: webkit moz ms o) {
   @each $c, $d in $a {
@@ -54,35 +27,6 @@
   }
 }
 
-
-
-/*!
- *
- * Transform the elements rotation, scale, and position
- *
- * $a = int + deg ["90deg"]
- * $b = int       ["1"]
- * $c = int + px  ["center"]
- * $d = int + px  ["center"]
- * $e = boolean   ["true" - toggle hardware acceleration]
- *
- * To absolute center an element, print the following:
- * @include position($a, $b, center, center, $e);
- *
- * To center an element on x axis, print the following:
- * @include position($a, $b, center, $d, $e);
- *
- * To center an element on y axis, print the following:
- * @include position($a, $b, $c, center, $e);
- *
- * To rotate an element, print the following:
- * @include position(#deg, $b, $c, $d, $e);
- *
- * To scale an element, print the following:
- * @include position($a, scale, $c, $d, $e);
- *
- */
-
 @mixin transform($a: 90deg, $b: 1, $c: center, $d: center, $e: true){
     @if $c == center { $c: -50%; left: 50% !important; }
     @if $d == center { $d: -50%;  top: 50% !important; }
@@ -90,29 +34,9 @@
     @include prefix((transform: rotate($a) scale($b) translate($c, $d) $e), webkit ms);
 }
 
-
-
-/*!
- *
- * Reset the browsers default box sizing
- * to eliminate weird spacing bugs
- *
- * $a = box model ["border-box"]
- *
- */
-
 @mixin box-sizing($a: border-box) {
     @include prefix((box-sizing: border-box), webkit moz);
 }
-
-
-
-/*!
- *
- * Set the targeted element to display
- * as a cross-browser flex-box
- *
- */
 
 @mixin flexbox() {
     display: -webkit-box;
@@ -122,55 +46,13 @@
     display: flex;
 }
 
-
-
-/*!
- *
- * Disable the selection of
- * text and elements.
- *
- */
-
 @mixin disable-selection($select: none) {
     @include prefix((user-select: $select), webkit khtml moz ms);
 }
 
-
-
-/*!
- *
- * Animate the element
- *
- * $a = selector ["all"]
- * $b = speed    ["1s"]
- * $c = style    ["linear"]
- * $d = delay    ["0s"]
- *
- */
-
 @mixin transition($a: all, $b: 1s, $c: linear, $d: 0s) {
     @include prefix((transition: $a $b $c $d), webkit moz ms);
 }
-
-
-
-/*!
- *
- * Transform the elements position
- *
- * $a = x position ["0px"]
- * $b = y position ["$a"]
- *
- * To absolute center an element, print the following:
- * @include position(center);
- *
- * To center an element on x axis, print the following:
- * @include position(center, $b);
- *
- * To center an element on y axis, print the following:
- * @include position($a, center);
- *
- */
 
 @mixin position($a: 0px, $b: $a) {
     @if $a == center { $a: -50%; left: 50% !important; }
@@ -178,159 +60,41 @@
     @include prefix((transform: translate($a, $b)), webkit ms);
 }
 
-
-
-/*!
- *
- * Scale the size of the element using the
- * transform method using a 0 - 1 integer.
- * Auto defaults to a 1:1 scale.
- *
- * $a = integer ["1"]
- *
- * To scale the element, print the following:
- * @include scale($a);
- *
- */
-
 @mixin scale($a: 1) {
     @include prefix((transform: scale($a)), webkit ms);
 }
-
-
-
-/*!
- *
- * Add a cross-browser box shadow to the element.
- *
- * $a = integer + px      ["0px"]
- * $b = integer + px      ["2px"]
- * $c = integer + px      ["3px"]
- * $d = integer + px      ["-1px"]
- * $e = hex | rgb | rgba  ["black"]
- *
- * To add the default shadow, just print the following:
- * @include boxshadow();
- *
- * To add your own box shadow, print the following:
- * @include boxshadow($a, $b, $c, $d, $e);
- *
- */
 
 @mixin boxshadow($a: 0px, $b: 2px, $c: 3px, $d: -1px, $e: black) {
     @include prefix((box-shadow: $a $b $c $d $e), webkit moz);
 }
 
-
-
-/*!
- *
- * Forces the browser to use hardware acceleration
- *
- */
-
 @mixin accelerate {
     @include prefix((transform: translate3d(0, 0, 0)), webkit ms);
 }
-
-
-
-/*!
- *
- * Convert the pixel value of the font-size
- * into rem format, while keeping the pixel
- * value as a fallback
- *
- * $a = font size in pixels ["16px"]
- *
- * To convert the font size, print the following:
- * @include font-size(#px);
- *
- */
 
 @mixin font-size($a: 16px) {
     font-size: $a;
     font-size: rem($a);
 }
 
-
-
-/*!
- *
- * Convert the pixel value of the line-height
- * into rem format, while keeping the pixel
- * value as a fallback
- *
- * $a = line height in pixels ["16"]
- *
- * To convert the font size, print the following:
- * @include line-height(int);
- *
- */
-
 @mixin line-height($a: 16) {
     line-height: $a + px;
     line-height: (0.125 * $a) + rem;
 }
 
-
-
-/*!
- *
- * Convert the pixel value of the font-size
- * into rem format, while keeping the pixel
- * value as a fallback
- *
- * $a = font size in pixels ["16px"]
- *
- * To convert the font size, print the following:
- * @include fontsize(#px);
- *
- */
-
 @mixin aspect-ratio($width, $ratio-x: 16, $ratio-y: 9) {
     @include size($width, $width * ($ratio-y / $ratio-x));
 }
-
-
-
-/*!
- *
- * Set the opacity of the selected element
- * using a 0 - 1 scale. You can also set the value
- * to 'hidden' to set the opacity to zero
- *
- * $a = opacity ["1"]
- *
- * To hide the element, print the following:
- * @include opacity(hidden);
- *
- */
 
 @mixin opacity($a: 1) {
     @if $a == hidden { $a: 0; }
     opacity: $a; filter: alpha(opacity=$a * 100);
 }
 
-
-
-/* set the size of an element */
 @mixin size($a, $b: $a) {
     width: $a;
     height: $b;
 }
-
-
-
-/*!
- *
- * Set the background image of an element
- * to fullscreen mode - fill the entire
- * element with the image.
- *
- * $a = size ["cover", "scale", "contain"]
- *
- */
 
 @mixin backgroundsize($a: cover) {
     @include prefix((background-size: $a), webkit moz o);

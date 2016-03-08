@@ -8,7 +8,7 @@
   *
   */
 
-$DEV_MODE = true;
+$DEV_MODE = false;
 
 /**
   * Temporary development path that the

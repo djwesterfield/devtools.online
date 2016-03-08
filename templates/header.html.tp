@@ -31,9 +31,12 @@
 
     </div>
 
-    <button id="add-tool">Add New Tool</button>
+    <!-- <button id="add-tool">Add New Tool</button> -->
 
-    <button id="twitter-login"><i class="fa fa-twitter"></i><span>Login With Twitter</span></button>
+    <button id="twitter-login">
+      <i class="fa fa-twitter"></i>
+      <span>Login With Twitter</span>
+    </button>
 
     <div id="user-info">
 

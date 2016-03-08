@@ -115,8 +115,27 @@ class Template {
 
     }else{
 
-      $file = 'lib.compiled.min.css';
-      $output .= '<link rel="stylesheet" href="'.STYLESHEETS_INTERNAL.$file.'">';
+      foreach($files as $file => $data) {
+
+        if($data['type'] === 'external') {
+
+          $source = STYLESHEETS_EXTERNAL;
+          $root   = STYLESHEETS_EXTERNAL_ROOT;
+
+          $file = $file.'.css';
+
+          if(file_exists($root.$file)) {
+
+            $output .= '<link rel="stylesheet" href="'.$source.$file.'">';
+
+          }
+
+        }
+
+      }
+
+      $minFile = 'lib.compiled.min.css';
+      $output .= '<link rel="stylesheet" href="'.STYLESHEETS_INTERNAL.$minFile.'">';
 
     }
 
