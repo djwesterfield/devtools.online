@@ -654,7 +654,7 @@ aside {
           text-decoration: none;
           text-transform: capitalize;
           display: inline-block;
-          color: #65717C;
+          color: rgba(255, 255, 255, 0.35);
           text-align: center;
           border-left: 4px solid transparent;
           width: 100px;
@@ -721,7 +721,7 @@ aside {
         font-size: 10px;
         cursor: pointer;
         position: relative;
-        color: #65717C;
+        color: rgba(255, 255, 255, 0.35);
         border-radius: 5px;
         width: 100%;
         height: auto; }
@@ -996,7 +996,7 @@ aside {
           position: relative;
           padding-bottom: 56%;
           background-repeat: no-repeat;
-          background-position: center;
+          background-position: top center;
           margin: -10px -10px 15px -10px;
           border-top-right-radius: 4px;
           border-top-left-radius: 4px;

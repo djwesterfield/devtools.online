@@ -525,7 +525,7 @@ window.mobile = {
                         output +=   '<nav class="actions">';
                         output +=     '<li title="' + like_tip + '"><button class="tool-action" data-action="heart"><i class="heart"></i><span>' + tool.likes + '</span></button></li>';
                         output +=     '<li title="Add this tool to your favorites"><button class="tool-action" data-action="favorite"><i class="fa fa-bookmark-o"></i><span>' + tool.favorites + '</span></button></li>';
-                        output +=     '<li title="Share this tool online"><button class="tool-action" data-action="share" data-url="http://twitter.com/share?text=' + share_text_parsed + '&url=' + tool_link + '"><i class="fa fa-share-alt"></i><span>Share</span></button></li>';
+                        output +=     '<li title="Share this tool online"><button class="tool-action" data-action="share" data-url="http://twitter.com/share?text=' + share_text_parsed + '&url=' + tool_link + '&via=devtoolsonline"><i class="fa fa-share-alt"></i><span>Share</span></button></li>';
                         output +=   '</nav>';
                         output += '</div></li>';
 
@@ -766,7 +766,7 @@ window.mobile = {
 
             };
 
-            // _this.addToolValue('all', 'showRef', true);
+            // _this.addToolValue('all', 'showRef', false);
 
 
 
