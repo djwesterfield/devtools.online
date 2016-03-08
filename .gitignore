@@ -49,6 +49,7 @@ Temporary Items
 # Ignore application directories
 .sass-cache/
 node_modules/
+firebase/
 
 #Ignore application files
 .htaccess

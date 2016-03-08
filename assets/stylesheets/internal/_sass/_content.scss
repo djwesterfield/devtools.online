@@ -100,14 +100,14 @@
 
       right: 2em;
       z-index: 10;
-      padding: 4px;
-      margin-top: 4px;
+      // padding: 4px;
+      // margin-top: 4px;
       min-width: 468px;
       min-height: 60px;
       max-height: 100%;
       position: absolute;
       display: inline-block;
-      border: 1px solid rgba(white, 0.25);
+      // border: 1px solid rgba(white, 0.25);
 
       @include size(auto);
       @include position(0px, center);
@@ -124,6 +124,7 @@
         left: 0.5em;
         color: white;
         padding: 1em;
+        display: none;
         font-size: 11px;
         position: absolute;
         content: 'Sponsored Content';
@@ -565,7 +566,7 @@
 
                 .heart {
 
-                  background: url(http://demos.9lessons.info/twitterHeart/images/web_heart_animation.png);
+                  background: url('../../../images/heart_animation.png');
                   background-position: left;
                   background-repeat: no-repeat;
                   cursor: pointer;

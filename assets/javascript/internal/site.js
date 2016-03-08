@@ -219,6 +219,8 @@
                             category:  tool.category,
                             thumbnail: tool.image,
                             url:       tool.url,
+                            showRef:   true,
+                            visible:   true,
                             likes:     0,
                             favorites: 0
 
@@ -461,34 +463,33 @@
 
                     var like_tip = tool.likes < 1 ? 'Be the first to like this tool' : 'Like this tool';
                     var share_text_parsed = encodeURIComponent(toolDescription.trim());
+                    var tool_link = tool.showRef === true ? tool.url + '?ref=devtools' : tool.url;
 
                     var output  = '<li itemscope itemtype="http://schema.org/WebPage" class="mix ' + tool.category + ' ' + tagClasses + ' ' + tool.hash + '" data-likes="'+tool.likes+'" data-saves="'+tool.favorites+'"><div class="tool" data-id="' + id + '" data-hash="' + tool.hash + '" data-category="' + tool.category + '" data-tags="' + tool.tags + '">';
                         output +=   '<div class="thumbnail" style=background-image:url(' + tool.thumbnail + ');"">';
                         output +=     '<div class="thumb-actions">';
-                        output +=       '<a title="' + tool.url + '" href="' + tool.url + '?ref=devtools" rel="external" target="new"><i class="fa fa-link"></i></a>';
+                        output +=       '<a title="' + tool.url + '" href="' + tool_link + '" rel="external" target="new"><i class="fa fa-link"></i></a>';
                         output +=       '<a class="more-info tool-link" data-tool="' + tool.hash + '" href="' + DevTools.Location + '#!/' + DevTools.Category + '/' + DevTools.Tag + '/' + tool.hash + '/" title="More information about ' + tool.name + '"><i class="fa fa-info"></i></a>';
                         output +=     '</div>';
                         output +=     '<!-- <img alt="' + imageAlt + '" src="' + tool.thumbnail + '"> -->';
                         output +=   '</div>';
                         output +=   '<div itemprop="mainContentOfPage" class="details">';
-                        output +=     '<h2><a itemprop="significantLink" class="tool-link" href="' + tool.url + '?ref=devtools" rel="external" target="new" title="' + tool.url + '">' + tool.name + '</a></h2>';
+                        output +=     '<h2><a itemprop="significantLink" class="tool-link" href="' + tool_link + '" rel="external" target="new" title="' + tool.url + '">' + tool.name + '</a></h2>';
                         output +=     '<p>' + tagList() + '</p>';
                         output +=     '<p itemprop="about" class="short-description edit-desc" title="' + toolDescription + '">' + toolDescription + '</p>';
                         output +=   '</div>';
                         output +=   '<nav class="actions">';
                         output +=     '<li title="' + like_tip + '"><button class="tool-action" data-action="heart"><i class="heart"></i><span>' + tool.likes + '</span></button></li>';
                         output +=     '<li title="Add this tool to your favorites"><button class="tool-action" data-action="favorite"><i class="fa fa-bookmark-o"></i><span>' + tool.favorites + '</span></button></li>';
-                        output +=     '<li title="Share this tool online"><button class="tool-action" data-action="share" data-url="http://twitter.com/share?text=' + share_text_parsed + '&url=' + tool.url + '?ref=devtools"><i class="fa fa-share-alt"></i><span>Share</span></button></li>';
+                        output +=     '<li title="Share this tool online"><button class="tool-action" data-action="share" data-url="http://twitter.com/share?text=' + share_text_parsed + '&url=' + tool_link + '"><i class="fa fa-share-alt"></i><span>Share</span></button></li>';
                         output +=   '</nav>';
                         output += '</div></li>';
 
-                    $toolsList.append(output);
-
-                    Pace.restart();
+                    if(tool.visible) { $toolsList.append(output); }
 
                     if(toolThis >= toolCount) {
 
-                      $btnAction = $('.tool-action');
+                      $btnAction  = $('.tool-action');
                       $btnDetails = $('.more-info');
 
                       _this.runCallback(callback);
@@ -696,6 +697,34 @@
               }
 
             };
+
+
+
+            this.addToolValue = function(toolID, key, value) {
+
+              if(toolID === 'all') {
+
+                DevTools.Firebase.child('tools').once('value', function(snapshot) {
+
+                  snapshot.forEach(function(data) {
+
+                    DevTools.Firebase.child('tools/' + data.key() + '/' + key).set(value);
+
+                  });
+
+                });
+
+              }else{
+
+                DevTools.Firebase.child('tools/' + toolID + '/' + key).set(value);
+
+              }
+
+            };
+
+            // _this.addToolValue('all', 'showRef', true);
+
+
 
             this.performAction = function(element, action, toolID) {
 
