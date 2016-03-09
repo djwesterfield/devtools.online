@@ -7,7 +7,7 @@ I wanted to create an all-in-one list of all the tools I found useful. Now, isnt
 for that link you bookmarked a few weeks ago, or trying to stay up-to-date with the latest web design trends,  
 everything is kept in one easy to use location for you.  
    
-   Though the site is now live at [www.devnoobs.online](https://www.devnoobs.online), the site is still very much in **BETA**. That means that  
+   Though the site is now live at [www.devtools.online](https://www.devtools.online), the site is still very much in **BETA**. That means that  
    there will almost certainly be bugs and inconsistencies - I apologize for that in advance. If you happen to find  
    any bugs, or just have a suggestion on how the site could be better, please feel free to [create an issue](https://github.com/thinkpixels/devtools.online/issues) for it.
    
