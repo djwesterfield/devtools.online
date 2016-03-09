@@ -13,7 +13,7 @@ everything is kept in one easy to use location for you.
    
    That being said, I've already started working on the **ALPHA** build, and with it comes some new features:  
    
-   1. Login with existing Twitter, Google, or GitHub accounts
+   1. ~~Login with existing Twitter, Google, or GitHub accounts~~
    2. Toggle content between list mode and grid mode for a more detailed view of the tools
    3. Share counts will be displayed on each of the tools "Share" action buttons.
    4. Iclude the ability to sort the tools list by "Likes", "Date Added", or "Shares"
