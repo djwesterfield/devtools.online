@@ -19,8 +19,6 @@
 
   </header>
 
-  {{include:info}}
-
   <ul id="tools-list"></ul>
 
   {{include:footer}}

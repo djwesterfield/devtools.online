@@ -64,7 +64,7 @@ window.mobile = {
     // ======================================
 
     DevTools.Title       = 'DevTools Online';
-    DevTools.Description = 'A massive collection of online web development tools';
+    DevTools.Description = 'A massive online collection of tools, links, and resources for web designers & developers.';
     DevTools.Timestamp   = +new Date;
 
     DevTools.Location = window.productionMode ? 'https://www.devtools.online/' : 'http://localhost/devtools.online/';
@@ -98,8 +98,9 @@ window.mobile = {
     var $main       = $('#main');
     var $content    = $('#content');
 
-    var $btnTwitter = $('#twitter-login');
-    var $btnLogout  = $('#logout');
+    var $btnAuth    = $('.auth-button');
+    var $btnLogin   = $('#site-login');
+    var $btnLogout  = $('#site-logout');
     var $btnSort    = $('.tool-sort');
 
     var $userInfo   = $('#user-info');
@@ -111,6 +112,17 @@ window.mobile = {
 
     var $mobileBtn     = $('#toggle-mobile-menu');
     var $mobileNav     = $('aside');
+
+    // =========================================
+    // establish DOM selectors for modal windows
+    // =========================================
+
+    var $modalContainer = $('#modal-container');
+    var $btnCloseModal  = $('.close-modal');
+
+    var $modalWindow = $('.modal-window');
+    var $modalAbout  = $('#about-prompt');
+    var $modalLogin  = $('#login-prompt');
 
     // var $tagSelector = $('.tag-selector');
 
@@ -144,7 +156,11 @@ window.mobile = {
 
             this.promptLogin = function() {
 
-              alert('Please sign in with your Twitter account first.');
+              _this.openModalWindow($modalLogin, function() {
+
+                $btnAuth.authHandler();
+
+              });
 
             };
 
@@ -313,28 +329,8 @@ window.mobile = {
 
                 DevTools.Category = parameters[1] ? parameters[1].toString() : '';
                 DevTools.Tag      = parameters[2] ? parameters[2].toString() : '';
-                DevTools.Tool     = parameters[3] ? parameters[3].toString() : '';
-
-                $('.tool-link').each(function() {
-
-                  var link = $(this);
-                  var tool = link.data('tool');
-
-                  link.attr('href', DevTools.Location + '#!/' + DevTools.Category + '/' + DevTools.Tag + '/' + tool + '/');
-
-                });
 
                 DevTools.Filter = DevTools.Tag === 'everything' ? '.' + DevTools.Category + ', all' : '.' + DevTools.Category + '.' + DevTools.Tag;
-
-                if(DevTools.Tool) {
-
-                  _this.loadTool(DevTools.Tool);
-
-                }else{
-
-                  _this.unloadTool();
-
-                }
 
               }else{
 
@@ -343,28 +339,6 @@ window.mobile = {
               }
 
               _this.runCallback(callback);
-
-            };
-
-            this.loadTool = function(tool) {
-
-              _this.hideTools(function() {
-
-                $toolInfo.addClass('visible');
-
-              });
-
-              DevTools.Firebase.child('tools').orderByChild('hash').equalTo(tool).once('value', function(snapshot) {
-
-                console.log('tool found: ' + snapshot.val());
-
-              });
-
-            };
-
-            this.unloadTool = function() {
-
-              $toolInfo.removeClass('visible');
 
             };
 
@@ -584,50 +558,84 @@ window.mobile = {
 
             this.authenticated = function(is, authData) {
 
-              $btnTwitter.hide();
-              $btnLogout.hide();
-
               switch(is) {
 
                 case true:
 
                   DevTools.Authenticated = true;
-                  DevTools.User = authData.twitter;
 
-                  $btnTwitter.hide();
-                  $btnLogout.show();
+                  var userID, userName, displayName, userImage;
 
-                  $userName.text(authData.twitter.displayName);
-                  $userAvatar.attr('src', authData.twitter.profileImageURL);
+                  switch(authData.provider) {
 
+                    case 'twitter':
+
+                      DevTools.User = authData.twitter;
+
+                      userID      = DevTools.User.id;
+                      userName    = DevTools.User.username;
+                      displayName = DevTools.User.displayName;
+                      userImage   = DevTools.User.profileImageURL;
+
+                    break;
+
+                    case 'google':
+
+                      DevTools.User = authData.google;
+
+                      userID      = DevTools.User.id;
+                      userName    = DevTools.User.displayName;
+                      displayName = DevTools.User.displayName;
+                      userImage   = DevTools.User.profileImageURL;
+
+                    break;
+
+                    case 'github':
+
+                      DevTools.User = authData.github;
+
+                      userID      = DevTools.User.id;
+                      userName    = DevTools.User.username;
+                      displayName = DevTools.User.displayName;
+                      userImage   = DevTools.User.profileImageURL;
+
+                    break;
+
+                  }
+
+                  $modalContainer.attr('data-visible', 'false');
+                  $modalLogin.remove();
+
+                  $userName.text(displayName);
+                  $userAvatar.attr('src', userImage);
+
+                  $btnLogin.hide();
                   $userInfo.show();
-
-                  // _this.showUserLikesAndFavorites();
 
                   // ===============================================
                   // add user to the database if they aren't already
                   // ===============================================
 
-                  DevTools.Firebase.child('users/' + authData.twitter.id).once('value', function(snapshot) {
+                  DevTools.Firebase.child('users/' + userID).once('value', function(snapshot) {
 
                     if(!snapshot.exists()) {
 
-                      DevTools.Firebase.child('users/' + authData.twitter.id).set({
+                      DevTools.Firebase.child('users/' + userID).set({
 
                         devtools_data: {
 
                           level:       0,
-                          username:    authData.twitter.username,
-                          displayName: authData.twitter.displayName,
-                          avatar:      authData.twitter.profileImageURL
+                          username:    userName,
+                          displayName: displayName,
+                          avatar:      userImage
 
                         },
 
-                        twitter_data: {
+                        auth_data: {
 
-                          username:    authData.twitter.username,
-                          displayName: authData.twitter.displayName,
-                          avatar:      authData.twitter.profileImageURL
+                          username:    userName,
+                          displayName: displayName,
+                          avatar:      userImage
 
                         }
 
@@ -642,12 +650,10 @@ window.mobile = {
                 default:
 
                   $userInfo.hide();
+                  $btnLogin.show();
 
                   $userName.text('');
                   $userAvatar.attr('src', '');
-
-                  $btnLogout.hide();
-                  $btnTwitter.show();
 
                   DevTools.Firebase.unauth();
                   DevTools.Authenticated = false;
@@ -1047,6 +1053,70 @@ window.mobile = {
 
             };
 
+            this.modalIsOpen = function() {
+
+              return $modalContainer.data('visible') === 'true' ? true : false;
+
+            };
+
+            this.openModalWindow = function($modal, callback) {
+
+              if(!_this.modalIsOpen()) {
+
+                $modalContainer.attr('data-visible', 'true').addClass('close-modal');
+                $modal.attr('data-visible', 'true');
+
+                $btnCloseModal.closeModalHandler();
+
+                $window.on('keyup', function(event) {
+
+                  var keyPressed = event.which || event.keyCode;
+
+                  if(keyPressed === 27) {
+
+                    _this.closeModalWindow();
+
+                  }
+
+                });
+
+              }
+
+              _this.runCallback(callback);
+
+            };
+
+            _this.closeModalWindow = function() {
+
+              $modalWindow.attr('data-visible', 'false');
+              $modalContainer.attr('data-visible', 'false').removeClass('close-modal');
+
+            };
+
+            $.fn.closeModalHandler = function() {
+
+              return this.on('click tap', function(event) {
+
+                _this.closeModalWindow();
+
+              });
+
+            };
+
+            $.fn.loginHandler = function() {
+
+              return this.on('click tap', function(event) {
+
+                _this.openModalWindow($modalLogin, function() {
+
+                  $btnAuth.authHandler();
+
+                });
+
+              });
+
+            };
+
             $.fn.logoutHandler = function() {
 
               return this.on('click tap', function(event) {
@@ -1063,23 +1133,21 @@ window.mobile = {
 
             };
 
-            $.fn.loginHandler = function() {
+            $.fn.authHandler = function() {
 
               return this.on('click tap', function(event) {
 
+                var authType = $(this).data('auth');
+
                 if(!DevTools.Authenticated) {
 
-                  DevTools.Firebase.authWithOAuthPopup('twitter', function(error, authData) {
+                  DevTools.Firebase.authWithOAuthPopup(authType, function(error, authData) {
 
                     if(!error && authData) {
 
                       _this.authenticated(true, authData);
 
                       location.reload();
-
-                    }else{
-
-                      _this.authenticated(false);
 
                     }
 
@@ -1124,8 +1192,9 @@ window.mobile = {
                     _this.checkURL(function() {
 
                       // run functions here
+
+                      $btnLogin.loginHandler();
                       $userInfo.logoutHandler();
-                      $btnTwitter.loginHandler();
 
                       _this.loadCategories(function() {
 
@@ -1277,7 +1346,7 @@ window.mobile = {
                     // check if the user is authenticated at page load
                     // ===============================================
 
-                    DevTools.Firebase.onAuth(function twitterAuth(authData) {
+                    DevTools.Firebase.onAuth(function authCheck(authData) {
 
                         DevTools.Authenticated = authData ? true : false;
 
