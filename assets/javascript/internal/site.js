@@ -163,7 +163,7 @@
 
             };
 
-            this.addNewTool = function() {
+            /* this.addNewTool = function() {
 
               var tool = {
 
@@ -237,7 +237,7 @@
 
               }
 
-            };
+            }; */
 
             this.runCallback = function(callback) {
 
@@ -615,7 +615,7 @@
 
             };
 
-            this.addNewCategory = function() {
+            /* this.addNewCategory = function() {
 
               var popup = prompt('Name the category:');
 
@@ -631,9 +631,9 @@
 
               }
 
-            };
+            }; */
 
-            this.addNewTag = function() {
+            /* this.addNewTag = function() {
 
               var popup = prompt('Name the tag:');
 
@@ -656,7 +656,7 @@
 
               }
 
-            };
+            }; */
 
             this.clearLikesAndFavorites = function() {
 
@@ -1063,11 +1063,11 @@
 
                   if(event.type === 'load') {
 
-                    $('a').on('click tap', function(event){
+                    /* $('a').on('click tap', function(event){
 
                       event.preventDefault();
 
-                    });
+                    }); */
 
                     $mobileBtn.on('click tap', function(event) {
 
@@ -1088,7 +1088,7 @@
                         if(DevTools.Category) { _this.updateCategory(); }
                         if(DevTools.Tag)      { _this.updateTag(); }
 
-                        $('#add-tag').on('click', function() {
+                        /* $('#add-tag').on('click', function() {
 
                           _this.addNewTag();
 
@@ -1098,7 +1098,7 @@
 
                           _this.addNewTool();
 
-                        });
+                        }); */
 
                       });
 
@@ -1109,7 +1109,7 @@
                         $btnDetails.openTool();
 
 
-                        $('.edit-desc').on('click', function() {
+                        /* $('.edit-desc').on('click', function() {
 
                           if(DevTools.Authenticated) {
 
@@ -1130,7 +1130,7 @@
 
                           }
 
-                        });
+                        }); */
 
                         $toolsList.mixItUp({
 

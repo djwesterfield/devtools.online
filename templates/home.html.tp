@@ -42,9 +42,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
 {{googlefonts}}
-
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> -->
-
 {{stylesheets}}
 
 <link rel="icon" href="{{favicon}}">

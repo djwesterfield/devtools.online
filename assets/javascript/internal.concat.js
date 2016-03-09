@@ -207,7 +207,7 @@ window.mobile = {
 
             };
 
-            this.addNewTool = function() {
+            /* this.addNewTool = function() {
 
               var tool = {
 
@@ -281,7 +281,7 @@ window.mobile = {
 
               }
 
-            };
+            }; */
 
             this.runCallback = function(callback) {
 
@@ -659,7 +659,7 @@ window.mobile = {
 
             };
 
-            this.addNewCategory = function() {
+            /* this.addNewCategory = function() {
 
               var popup = prompt('Name the category:');
 
@@ -675,9 +675,9 @@ window.mobile = {
 
               }
 
-            };
+            }; */
 
-            this.addNewTag = function() {
+            /* this.addNewTag = function() {
 
               var popup = prompt('Name the tag:');
 
@@ -700,7 +700,7 @@ window.mobile = {
 
               }
 
-            };
+            }; */
 
             this.clearLikesAndFavorites = function() {
 
@@ -1107,11 +1107,11 @@ window.mobile = {
 
                   if(event.type === 'load') {
 
-                    $('a').on('click tap', function(event){
+                    /* $('a').on('click tap', function(event){
 
                       event.preventDefault();
 
-                    });
+                    }); */
 
                     $mobileBtn.on('click tap', function(event) {
 
@@ -1132,7 +1132,7 @@ window.mobile = {
                         if(DevTools.Category) { _this.updateCategory(); }
                         if(DevTools.Tag)      { _this.updateTag(); }
 
-                        $('#add-tag').on('click', function() {
+                        /* $('#add-tag').on('click', function() {
 
                           _this.addNewTag();
 
@@ -1142,7 +1142,7 @@ window.mobile = {
 
                           _this.addNewTool();
 
-                        });
+                        }); */
 
                       });
 
@@ -1153,7 +1153,7 @@ window.mobile = {
                         $btnDetails.openTool();
 
 
-                        $('.edit-desc').on('click', function() {
+                        /* $('.edit-desc').on('click', function() {
 
                           if(DevTools.Authenticated) {
 
@@ -1174,7 +1174,7 @@ window.mobile = {
 
                           }
 
-                        });
+                        }); */
 
                         $toolsList.mixItUp({
 

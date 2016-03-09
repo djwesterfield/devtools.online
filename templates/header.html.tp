@@ -15,23 +15,12 @@
 
   <div id="header-container">
 
-    <!--
-    <nav id="header-main-nav">
-
-      <li><a class="main-nav-btn circle"><span class="fa fa-question"></span></a></li>
-      <li><a class="main-nav-btn">Suggest A New Tool</a></li>
-
-    </nav>
-    -->
-
     <div id="search-form">
 
       <label for="search-input" class="fa fa-search" id="search-icon"></label>
       <input id="search-input" placeholder="Find tools by name, category, or tags">
 
     </div>
-
-    <!-- <button id="add-tool">Add New Tool</button> -->
 
     <button id="twitter-login">
       <span class="fa fa-twitter"></span>
@@ -44,15 +33,6 @@
 
       <label id="user-name"></label>
       <span id="user-dropper" class="fa fa-chevron-down"></span>
-
-      <!--
-      <nav id="user-menu">
-
-        <li id="">My Favorites</li>
-        <li id="logout">Logout</li>
-
-      </nav>
-      -->
 
     </div>
 
