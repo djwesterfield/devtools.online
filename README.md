@@ -13,12 +13,13 @@ everything is kept in one easy to use location for you.
    
    That being said, I've already started working on the **ALPHA** build, and with it comes some new features:  
    
-   1. Toggle content between list mode and grid mode for a more detailed view of the tools
-   2. Share counts will be displayed on each of the tools "Share" action buttons.
-   3. Iclude the ability to sort the tools list by "Likes", "Date Added", or "Shares"
-   4. Add a "Favorite" button to the tool actions, alongside the existing "Like" and "Share" buttons  
-   5. With the ability to "Favorite" a tool also comes the ability to view a curated list of your favorite tools. Goodbye bookmarks!
-   6. Image lazy loading to smooth the page loading process
+   1. Login with existing Twitter, Google, or GitHub accounts
+   2. Toggle content between list mode and grid mode for a more detailed view of the tools
+   3. Share counts will be displayed on each of the tools "Share" action buttons.
+   4. Iclude the ability to sort the tools list by "Likes", "Date Added", or "Shares"
+   5. Add a "Favorite" button to the tool actions, alongside the existing "Like" and "Share" buttons  
+   6. With the ability to "Favorite" a tool also comes the ability to view a curated list of your favorite tools. Goodbye bookmarks!
+   7. Image lazy loading to smooth the page loading process
  
 There will be more features coming that haven't been listed here already, so be sure to star DevTools and keep an  
 eye open for future changes. In the mean time, if you know of some tools or resources that other developers might  
