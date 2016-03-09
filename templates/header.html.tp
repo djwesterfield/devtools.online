@@ -4,14 +4,8 @@
 
   <div id="logo-container">
     <h1>DevTools<span>.Online</span></h1>
-    <h2>A Massive Collection of Web Development Tools</h2>
+    <h2>A <span class="hide-mobile">Massive </span>Collection of Web Dev<span class="hide-mobile">elopment</span> Tools</h2>
   </div>
-
-  <button id="toggle-mobile-menu">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </button>
 
   <div id="header-container">
 
@@ -22,18 +16,20 @@
 
     </div>
 
-    <button id="twitter-login">
-      <span class="fa fa-twitter"></span>
-      <h2>Login With Twitter</h2>
+    <button id="toggle-mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
     </button>
 
-    <div id="user-info">
+    <button id="site-login">
+      <span class="fa fa-lock"></span>
+      <span id="login-label">Login to DevTools</span>
+    </button>
 
+    <div class="pointer" id="user-info">
       <img id="user-avatar">
-
       <label id="user-name"></label>
-      <span id="user-dropper" class="fa fa-chevron-down"></span>
-
     </div>
 
   </div>

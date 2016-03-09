@@ -1,0 +1,39 @@
+<div id="modal-container" data-visible="false">
+
+  <modal class="modal-window" id="about-prompt" data-visible="false">DevTools Online is a massive collection of tools, links, and resources for web designers &amp; developers. Each tool has been hand picked as a helpful resource when building the web. From marketing tools to web servers, design assets to javascript snippets, DevTools Online has everything you need to make the web a better place and further your knowledge of development.</modal>
+
+  <modal class="modal-window" id="login-prompt" data-visible="false">
+
+    <header class="modal-header">
+      <h1>Login <span>to DevTools</span></h1>
+      <button class="close-modal close-modal-button">
+        <span class="fa fa-close"></span>
+      </button>
+    </header>
+
+    <div class="modal-content">
+
+      <p class="clear border-bottom">Login to DevTools using your existing Twitter, Google, or GitHub account. Logging in allows you to "like" tools that you find helpful or relevant, making it easier for other visitors to know which tools to keep an eye on.<br><br>An upcoming update will also allow users to "favorite" tools they find especially helpful, allowing them to easily find those tools again in the future, creating a more personalized experience.</p>
+
+      <button class="auth-button" data-auth="twitter">
+        <span class="fa fa-twitter"></span>
+        <span class="auth-button-label">Login with Twitter</span>
+      </button>
+
+      <button class="auth-button" data-auth="google">
+        <span class="fa fa-google"></span>
+        <span class="auth-button-label">Login with Google</span>
+      </button>
+
+      <button class="auth-button" data-auth="github">
+        <span class="fa fa-github"></span>
+        <span class="auth-button-label">Login with GitHub</span>
+      </button>
+
+      <p class="border-top release">Logging in through a third party means you are subject to that parties terms and conditions.</p>
+
+    </div>
+
+  </modal>
+
+</div>

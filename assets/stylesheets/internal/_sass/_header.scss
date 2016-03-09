@@ -5,7 +5,7 @@
   z-index: 200;
   position: fixed;
   padding-left: $sidebar_width;
-  background-color: #242B34;
+  background-color: $header_background;
 
   @include size(100%, $header_height);
 
@@ -79,6 +79,12 @@
 
       }
 
+      @media(max-width: $mobile_break) {
+
+        font-size: 1.35em;
+
+      }
+
     }
 
     h2 {
@@ -90,42 +96,10 @@
       letter-spacing: 0.55px;
       text-transform: uppercase;
 
-    }
+      @media(max-width: $mobile_break) {
 
-  }
-
-  #toggle-mobile-menu {
-
-    top: 50%;
-    right: 1.5em;
-    border: 0px;
-    display: none;
-    // margin-top: -14px;
-    position: absolute;
-    border-radius: 3px;
-    padding: 8px 6px;
-    background: transparent;
-    border: 1px solid rgba(white, 0.15);
-    @include position(0px, center);
-
-    @media(max-width: $mobile_break) {
-
-      display: block;
-
-    }
-
-    .bar {
-
-      float: left;
-      clear: both;
-      display: block;
-      background: white;
-
-      @include size(2em, 0.15em);
-
-      &:nth-child(even) {
-
-        margin: 0.45em 0px;
+        font-size: 0.8em;
+        letter-spacing: 0.18em;
 
       }
 
@@ -144,7 +118,56 @@
 
     @media(max-width: $mobile_break) {
 
+      right: 0px;
+      position: absolute;
+      padding: 1.5em 1em 1.5em 0em;
+
+      @include size(auto, 100%);
+
+    }
+
+    #toggle-mobile-menu {
+
+      float: left;
+      border: 0px;
+      right: 1.5em;
       display: none;
+      padding: 8px 6px;
+      border-radius: 3px;
+      background: transparent;
+      border: 1px solid rgba(white, 0.15);
+
+      //@include position(0px, center);
+
+      &:hover,
+      &:focus {
+
+        border-color: rgba(white, 0.25);
+
+      }
+
+      @media(max-width: $mobile_break) {
+
+        display: inline-block;
+
+      }
+
+      .bar {
+
+        float: left;
+        clear: both;
+        display: block;
+        background: white;
+
+        @include size(2em, 0.15em);
+
+        &:nth-child(even) {
+
+          margin: 0.45em 0px;
+
+        }
+
+      }
 
     }
 
@@ -207,6 +230,12 @@
       display: inline-block;
 
       @include size(auto, 100%);
+
+      @media(max-width: $mobile_break) {
+
+        display: none;
+
+      }
 
       #search-icon {
 

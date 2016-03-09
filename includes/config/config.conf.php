@@ -8,7 +8,7 @@
   *
   */
 
-$DEV_MODE = false;
+$DEV_MODE = true;
 
 $PRODUCTION = false;
 $PRODUCTION_URL = 'https://www.devtools.online/';

@@ -48,8 +48,8 @@ $home->_include('header');
 $home->_include('mobilenav');
 $home->_include('sidebar');
 $home->_include('content');
-$home->_include('info');
 $home->_include('footer');
+$home->_include('modals');
 
 // $home->set_ip_address(client_ip_address());
 

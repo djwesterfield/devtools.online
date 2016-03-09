@@ -9,6 +9,16 @@
 @import '_footer';
 @import '_modal';
 
+.hide-mobile {
+
+  @media(max-width: $mobile_break) {
+
+    display: none;
+
+  }
+
+}
+
 body {
 
   font-size: 13px;
@@ -19,9 +29,16 @@ body {
 
   a, button, .link, .pointer {
 
+    outline: none;
     cursor: pointer;
 
     @include transition(all, 0.265s, ease, 0s);
+
+    * {
+
+      cursor: inherit;
+
+    }
 
   }
 
@@ -41,93 +58,71 @@ body {
 
   float: right;
   display: none;
-  cursor: pointer;
   position: relative;
 
   background: #2a343c;
-  display: inline-block;
   border-radius: $user_avatar_size;
   padding: 0px $user_avatar_size/2 0px 0px;
+
+  @media(max-width: $mobile_break) {
+
+    float: left;
+    padding: 0px;
+    margin: -2px 0em 0em 1em;
+
+    @include size(auto);
+
+  }
+
+  &:hover,
+  &:focus {
+
+    background: lighten(#2a343c, 5%);
+
+    #user-avatar {
+
+      border-color: lighten(#2a343c, 5%);
+
+    }
+
+  }
 
   #user-avatar,
   #user-name {
 
-    z-index: 1;
     float: left;
-    cursor: pointer;
+    color: white;
     position: relative;
     display: inline-block;
     line-height: $user_avatar_size;
-
-    @include size(auto, $user_avatar_size);
 
   }
 
   #user-avatar {
 
     border-radius: 100%;
-    border: 5px solid #2a343c;
-    margin-right: 10px;
+    display: inline-block;
+    margin: 5px 12px 5px 5px;
+    background: rgba(black, 0.25);
 
-  }
+    @include size(30px);
 
-  #user-name {
+    @media(max-width: $mobile_break) {
 
-    color: white;
-    font-size: 13px;
-    font-weight: 600;
-
-  }
-
-  #user-dropper {
-
-    z-index: 1;
-    float: left;
-    color: white;
-    margin-left: 10px;
-    position: relative;
-    display: none;
-    line-height: $user_avatar_size;
-
-  }
-
-  #user-menu {
-
-    top: 100%;
-    right:  0px;
-    z-index: 0;
-    display: none;
-
-    margin-top: -2em;
-    background: #2a343c;
-    position: absolute;
-    padding: 2em 0em;
-    border-bottom-left-radius: $user_avatar_size / 2;
-    border-bottom-right-radius: $user_avatar_size / 2;
-
-
-    @include size(100%, auto);
-
-    li {
-
-      float: left;
-      clear: both;
-      padding: 1em;
-      color: white;
-      position: relative;
-      display: inline-block;
-
-      @include size(100%, auto);
+      margin: 5px;
 
     }
 
   }
 
-  &:hover {
+  #user-name {
 
-    #user-menu {
+    font-size: 13px;
+    font-weight: 600;
 
-      // display: block;
+    @media(max-width: $mobile_break) {
+
+      display: none;
 
     }
 
@@ -135,31 +130,39 @@ body {
 
 }
 
-#twitter-login {
+#site-login {
 
   border: 0px;
   float: right;
-  display: none;
   outline: none;
+  display: none;
   overflow: hidden;
   position: relative;
-  display: inline-block;
-  padding: 1em 1em 1em 4em;
-  background: $social_twitter;
+  background: $social_google;
   border-radius: $user_avatar_size;
   padding: 0px $user_avatar_size/2 0px 0px;
 
   @include size(auto, 100%);
 
-  @media(max-width: $mobile_break) {
+  &:hover,
+  &:focus {
 
-    float: left;
-
-    @include size(100%, auto);
+    background: lighten($social_google, 5%);
 
   }
 
-  h2, .fa {
+  @media(max-width: $mobile_break) {
+
+    float: left;
+    padding: 0px;
+    margin-top: -2px;
+    margin: -2px 0em 0em 1em;
+
+    @include size(auto);
+
+  }
+
+  span {
 
     float: left;
     color: white;
@@ -167,27 +170,38 @@ body {
     display: inline-block;
     line-height: $user_avatar_size;
 
-  }
+    &#login-label {
 
-  h2 {
+      font-size: 13px;
+      font-weight: 600;
 
-    font-size: 13px;
-    font-weight: 600;
+      @media(max-width: $mobile_break) {
 
-  }
+        display: none;
 
-  .fa {
+      }
 
-    font-size: 1.25em;
-    text-align: center;
-    margin-right: 10px;
-    border-radius: 100%;
-    display: inline-block;
-    border: 5px solid $social_twitter;
-    background: rgba(black, 0.25);
-    line-height: $user_avatar_size - 8;
+    }
 
-    @include size($user_avatar_size);
+    &.fa {
+
+      line-height: 32px;
+      font-size: 1.25em;
+      text-align: center;
+      border-radius: 100%;
+      display: inline-block;
+      margin: 5px 12px 5px 5px;
+      background: rgba(black, 0.25);
+
+      @include size(30px);
+
+      @media(max-width: $mobile_break) {
+
+        margin: 5px;
+
+      }
+
+    }
 
   }
 
