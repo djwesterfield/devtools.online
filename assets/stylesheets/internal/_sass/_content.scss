@@ -105,6 +105,7 @@
       min-width: 468px;
       min-height: 60px;
       max-height: 100%;
+      overflow: hidden;
       position: absolute;
       display: inline-block;
       // border: 1px solid rgba(white, 0.25);
@@ -511,12 +512,11 @@
             padding: 0px;
             display: inline-block;
 
-            @include size(33.333%, auto);
+            @include size(50%, auto);
 
-            &:nth-child(even) {
+            &:last-child {
 
               border-left: 1px solid #e0e2e8;
-              border-right: 1px solid #e0e2e8;
 
             }
 
@@ -530,9 +530,23 @@
               font-size: 16px;
               line-height: 16px;
               text-align: center;
+              position: relative;
               background: transparent;
 
-              @include size(100%, auto);
+              @include size(100%, 40px);
+
+              .action-button-content {
+
+                top: 0px;
+                left: 0px;
+                line-height: 40px;
+                position: absolute;
+                text-align: center;
+                display: inline-block;
+
+                @include size(100%);
+
+              }
 
               span {
 
@@ -540,6 +554,16 @@
                 line-height: 16px;
                 margin-left: 10px;
                 display: inline-block;
+
+              }
+
+              &[data-action="share"] {
+
+                &:hover {
+
+                  color: #3CABFF;
+
+                }
 
               }
 
@@ -571,10 +595,9 @@
                   background: url('#{$path_images}heart_animation.png');
                   background-position: left;
                   background-repeat: no-repeat;
+                  margin: -20px;
                   cursor: pointer;
-                  position: absolute;
-                  left:-6px;
-                  top: -6px;
+                  display: inline-block;
                   background-size:1450px; //actual background size 2900px
 
                   @include size(50px);

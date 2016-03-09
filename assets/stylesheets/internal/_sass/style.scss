@@ -7,6 +7,7 @@
 @import '_content';
 @import '_info';
 @import '_footer';
+@import '_modal';
 
 body {
 
@@ -26,6 +27,7 @@ body {
 
   #main {
 
+    float:       left;
     outline:     none;
     min-height: 100vh;
 
@@ -157,7 +159,7 @@ body {
 
   }
 
-  span, .fa {
+  h2, .fa {
 
     float: left;
     color: white;
@@ -167,7 +169,7 @@ body {
 
   }
 
-  span {
+  h2 {
 
     font-size: 13px;
     font-weight: 600;

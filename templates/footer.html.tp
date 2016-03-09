@@ -1,1 +1,15 @@
-<footer><p>Copyright &copy; 2016 Sebastian Inman. All rights reserved. <a>Follow DevTools on Twitter for updates and to request new tools.</a></p></footer>
+<footer>
+
+  <div id="footer-content">
+
+    <div id="footer-social" class="addthis_native_toolbox"></div>
+    <p>Made with <span class="fa fa-heart"></span> by <a href="http://www.sebastianinman.com" target="new">Sebastian Inman</a>.</p>
+    <p class="float-right">Please report any bugs or tweaks to the <a href="https://github.com/thinkpixels/devtools.online/issues" target="new">DevTools GitHub repo</a>.</p>
+
+  </div>
+
+</footer>
+
+<modal id="about_window">
+  DevTools Online is a massive collection of tools, links, and resources for web designers &amp; developers. Each tool has been hand picked as a helpful resource when building the web. From marketing tools to web servers, design assets to javascript snippets, DevTools Online has everything you need to make the web a better place and further your knowledge of development.
+</modal>

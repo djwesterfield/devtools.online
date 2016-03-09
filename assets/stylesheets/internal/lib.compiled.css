@@ -452,7 +452,7 @@ aside {
         float: left;
         display: block;
         position: relative;
-        max-height: 14.28571428571429%;
+        max-height: 16.666%;
         width: 100%;
         height: auto; }
         aside nav#category-nav li .category-selector {
@@ -662,6 +662,7 @@ aside {
       min-width: 468px;
       min-height: 60px;
       max-height: 100%;
+      overflow: hidden;
       position: absolute;
       display: inline-block;
       width: auto;
@@ -937,11 +938,10 @@ aside {
             float: left;
             padding: 0px;
             display: inline-block;
-            width: 33.333%;
+            width: 50%;
             height: auto; }
-            #content #tools-list li .tool .actions li:nth-child(even) {
-              border-left: 1px solid #e0e2e8;
-              border-right: 1px solid #e0e2e8; }
+            #content #tools-list li .tool .actions li:last-child {
+              border-left: 1px solid #e0e2e8; }
             #content #tools-list li .tool .actions li .tool-action {
               float: left;
               border: 0px;
@@ -951,14 +951,26 @@ aside {
               font-size: 16px;
               line-height: 16px;
               text-align: center;
+              position: relative;
               background: transparent;
               width: 100%;
-              height: auto; }
+              height: 40px; }
+              #content #tools-list li .tool .actions li .tool-action .action-button-content {
+                top: 0px;
+                left: 0px;
+                line-height: 40px;
+                position: absolute;
+                text-align: center;
+                display: inline-block;
+                width: 100%;
+                height: 100%; }
               #content #tools-list li .tool .actions li .tool-action span {
                 font-size: 11px;
                 line-height: 16px;
                 margin-left: 10px;
                 display: inline-block; }
+              #content #tools-list li .tool .actions li .tool-action[data-action="share"]:hover {
+                color: #3CABFF; }
 @-webkit-keyframes heartBlast {
   0% {
     background-position: left; }
@@ -978,10 +990,9 @@ aside {
                 background: url("https://www.devtools.online/assets/images/heart_animation.png");
                 background-position: left;
                 background-repeat: no-repeat;
+                margin: -20px;
                 cursor: pointer;
-                position: absolute;
-                left: -6px;
-                top: -6px;
+                display: inline-block;
                 background-size: 1450px;
                 width: 50px;
                 height: 50px; }
@@ -1028,6 +1039,7 @@ footer {
   bottom: 0px;
   background: white;
   position: absolute;
+  margin-bottom: -13px;
   border-top: 1px solid #CCCCCC;
   padding-left: 320px;
   width: 100%;
@@ -1041,14 +1053,57 @@ footer {
       bottom: initial;
       position: relative;
       padding-left: 0px; } }
-  footer p {
+  footer #footer-content {
     float: left;
-    font-size: 12px;
-    padding: 2em 2em;
-    color: #686868; }
-    @media (max-width: 600px) {
-      footer p {
-        padding: 2em; } }
+    padding: 2em;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: auto; }
+    footer #footer-content #footer-social {
+      float: left;
+      margin-right: 2em;
+      position: relative;
+      display: inline-block; }
+      @media (max-width: 600px) {
+        footer #footer-content #footer-social {
+          margin-bottom: 2em; } }
+    footer #footer-content .addthis_toolbox a {
+      margin-bottom: 0px !important; }
+    footer #footer-content p {
+      float: left;
+      font-size: 12px;
+      line-height: 20px;
+      color: #686868;
+      display: inline-block;
+      width: auto;
+      height: 20px; }
+      @media (max-width: 600px) {
+        footer #footer-content p {
+          clear: both;
+          width: 100%;
+          height: auto; } }
+      footer #footer-content p .fa-heart {
+        margin: 0px 2px;
+        color: #ff513d; }
+      footer #footer-content p.float-right {
+        float: right; }
+
+modal {
+  z-index: -9999;
+  display: block;
+  position: fixed;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  left: 50% !important;
+  top: 50% !important;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: opacity 0.5s ease 0s;
+  -moz-transition: opacity 0.5s ease 0s;
+  -ms-transition: opacity 0.5s ease 0s;
+  transition: opacity 0.5s ease 0s; }
 
 body {
   font-size: 13px;
@@ -1062,6 +1117,7 @@ body {
     -ms-transition: all 0.265s ease 0s;
     transition: all 0.265s ease 0s; }
   body #main {
+    float: left;
     outline: none;
     min-height: 100vh;
     width: 100%;
@@ -1144,13 +1200,13 @@ body {
       float: left;
       width: 100%;
       height: auto; } }
-  #twitter-login span, #twitter-login .fa {
+  #twitter-login h2, #twitter-login .fa {
     float: left;
     color: white;
     position: relative;
     display: inline-block;
     line-height: 40px; }
-  #twitter-login span {
+  #twitter-login h2 {
     font-size: 13px;
     font-weight: 600; }
   #twitter-login .fa {

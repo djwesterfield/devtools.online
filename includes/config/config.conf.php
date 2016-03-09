@@ -52,8 +52,8 @@ $GA_TRACKING_PROD = 'UA-PRODX-X';
   */
 
 $SITE_IMAGE       = 'http://placehold.it/400x200';
-$SITE_TITLE       = 'DevTools Online | A Massive Collection of Tools, Links, and Resources';
-$SITE_DESCRIPTION = 'A massive online collection of tools, links, and resources for web designers & developers.';
+$SITE_TITLE       = 'DevTools Online | Web Development Tools, Links & Resources';
+$SITE_DESCRIPTION = 'A massive online collection of tools, links, and resources for web designers & developers. Follow @devtoolsonline on Twitter for updates.';
 $SITE_KEYWORDS    = 'devtools, dev tools, online, web design, web development, webdev, applications, advertising, inspiration, google, website builders, version control, social networking, data tracking, seo, marketing, databases, javascript, html, css, php, perl, icons, design, graphic design, sebastian inman, thinkpixels, think pixels';
 
 /**

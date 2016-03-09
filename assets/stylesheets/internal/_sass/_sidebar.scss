@@ -5,7 +5,7 @@ aside {
   left:   0px;
   bottom: 0px;
   top:  $header_height;
-  
+
   position: fixed;
   width: $sidebar_width;
   background-color: $sidebar_background;
@@ -58,7 +58,7 @@ aside {
         float: left;
         display: block;
         position: relative;
-        max-height: 14.28571428571429%;
+        max-height: 16.666%;
 
         @include size(100%, auto);
 

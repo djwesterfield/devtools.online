@@ -4,6 +4,7 @@ footer {
   bottom: 0px;
   background: white;
   position: absolute;
+  margin-bottom: -13px;
   border-top: 1px solid $border_color;
 
   padding-left: $sidebar_width;
@@ -22,16 +23,66 @@ footer {
 
   }
 
-  p {
+  #footer-content {
 
     float: left;
-    font-size: 12px;
-    padding: 2em 2em;
-    color: $content_color;
+    padding: 2em;
+    position: relative;
+    display: inline-block;
 
-    @media(max-width: $mobile_break) {
+    @include size(100%, auto);
 
-      padding: 2em;
+    #footer-social {
+
+      float: left;
+      margin-right: 2em;
+      position: relative;
+      display: inline-block;
+
+      @media(max-width: $mobile_break) {
+
+        margin-bottom: 2em;
+
+      }
+
+    }
+
+    .addthis_toolbox a {
+
+      margin-bottom: 0px !important;
+
+    }
+
+    p {
+
+      float: left;
+      font-size: 12px;
+      line-height: 20px;
+      color: $content_color;
+      display: inline-block;
+
+      @include size(auto, 20px);
+
+      @media(max-width: $mobile_break) {
+
+        clear: both;
+
+        @include size(100%, auto);
+
+      }
+
+      .fa-heart {
+
+        margin: 0px 2px;
+        color: rgba(#FF513D, 1);
+
+      }
+
+      &.float-right {
+
+        float: right;
+
+      }
 
     }
 

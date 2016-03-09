@@ -1,0 +1,11 @@
+modal {
+
+  z-index: -9999;
+  display: block;
+  position: fixed;
+
+  @include opacity(0);
+  @include position(center);
+  @include transition(opacity, 0.5s, ease);
+
+}

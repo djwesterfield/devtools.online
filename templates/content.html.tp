@@ -2,8 +2,9 @@
 
   <header id="content-header">
 
-    <h1><span id="category"></span><span id="tag"></span></h1>
+    <h1><span id="category">Development</span><span id="tag">#Everything</span></h1>
 
+    <!--
     <nav id="content-filter">
 
       <li><label>Sort results by:</label></li>
@@ -12,6 +13,7 @@
       <li><a class="tool-sort" data-sort="comments:desc" data-active="false">Comments</a></li>
 
     </nav>
+    -->
 
     <div id="content-promotion-container">
 
