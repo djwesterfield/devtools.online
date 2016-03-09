@@ -3,7 +3,7 @@
 > A massive online collection of web development tools, links & resources
 
 DevTools is a massive online collection of tools, links, and resources for web designers and developers.  
-I wanted to create an all-in-one list of all the tools I found useful. Now, isntead of constantly searching  
+I wanted to create an all-in-one list of all the tools I found useful. Now, instead of constantly searching  
 for that link you bookmarked a few weeks ago, or trying to stay up-to-date with the latest web design trends,  
 everything is kept in one easy to use location for you.  
    
