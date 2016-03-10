@@ -19,7 +19,21 @@
 
   </header>
 
-  <ul id="tools-list"></ul>
+  <nav id="filter-menu">
+
+    <ul class="filter-menu-list" id="nav-filter-options">
+      <li><p>Sort results by:</p></li>
+      <li><button>Likes</button></li>
+    </ul>
+
+    <ul class="filter-menu-list" id="nav-view-options">
+      <li><button class="change-view-button" data-view="grid"><span class="fa fa-th"></span>Grid</button></li>
+      <li><button class="change-view-button" data-view="list"><span class="fa fa-th-list"></span>List</button></li>
+    </ul>
+
+  </nav>
+
+  <ul id="tools-list" data-view="grid"></ul>
 
   {{include:footer}}
 

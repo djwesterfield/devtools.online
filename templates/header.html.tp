@@ -12,7 +12,7 @@
     <div id="search-form">
 
       <label for="search-input" class="fa fa-search" id="search-icon"></label>
-      <input id="search-input" placeholder="Find tools by name, category, or tags">
+      <input id="search-input" placeholder="Search for tools by name, category or tags">
 
     </div>
 

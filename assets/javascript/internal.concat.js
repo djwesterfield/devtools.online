@@ -124,6 +124,12 @@ window.mobile = {
     var $modalAbout  = $('#about-prompt');
     var $modalLogin  = $('#login-prompt');
 
+    // ======================================
+    // establish DOM buttons for view changes
+    // ======================================
+
+    var $btnChangeView = $('.change-view-button');
+
     // var $tagSelector = $('.tag-selector');
 
     var $inputSearch = $('#search-input');
@@ -478,7 +484,34 @@ window.mobile = {
 
                     };
 
-                    var like_tip = tool.likes < 1 ? 'Be the first to like this tool' : 'Like this tool';
+                    var ordinal = function(int) {
+
+                      var j = int % 10,
+                          k = int % 100;
+
+                      if(j == 1 && k != 11) {
+
+                        return int + 'st';
+
+                      }
+
+                      if(j == 2 && k != 12) {
+
+                        return int + 'nd';
+
+                      }
+
+                      if(j == 3 && k != 13) {
+
+                        return int + 'rd';
+
+                      }
+
+                      return int + 'th';
+
+                    };
+
+                    var like_tip = tool.likes < 1 ? 'Be the first to like ' + tool.name : 'Be the ' + ordinal(parseInt(tool.likes) + 1) + ' to like ' + tool.name;
                     var share_text_parsed = encodeURIComponent(toolDescription.trim());
                     var tool_link = tool.showRef === true ? tool.url + '?ref=devtools' : tool.url;
 
@@ -1103,6 +1136,18 @@ window.mobile = {
 
             };
 
+            $.fn.viewChangeHandler = function() {
+
+              return this.on('click tap', function(event) {
+
+                var viewType = $(this).data('view');
+
+                $toolsList.attr('data-view', viewType);
+
+              });
+
+            };
+
             $.fn.loginHandler = function() {
 
               return this.on('click tap', function(event) {
@@ -1180,6 +1225,8 @@ window.mobile = {
                       event.preventDefault();
 
                     }); */
+
+                    $btnChangeView.viewChangeHandler();
 
                     $mobileBtn.on('click tap', function(event) {
 

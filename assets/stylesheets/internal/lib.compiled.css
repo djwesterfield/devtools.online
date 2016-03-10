@@ -742,62 +742,183 @@ aside {
             background: white; }
         #content #content-header #content-filter li:last-child {
           margin-right: 0em; }
+  #content #filter-menu {
+    clear: both;
+    float: left;
+    margin: 0px;
+    position: relative;
+    display: inline-block;
+    padding: 2em 2em 0em 2em;
+    width: 100%;
+    height: auto; }
+    #content #filter-menu .filter-menu-list {
+      position: relative;
+      display: inline-block; }
+      #content #filter-menu .filter-menu-list#nav-filter-options {
+        float: left; }
+      #content #filter-menu .filter-menu-list#nav-view-options {
+        float: right; }
+        #content #filter-menu .filter-menu-list#nav-view-options li button {
+          padding: 0em 1em;
+          line-height: 30px;
+          width: auto;
+          height: 32px; }
+          #content #filter-menu .filter-menu-list#nav-view-options li button .fa {
+            font-size: 14px;
+            margin-right: 10px; }
+      #content #filter-menu .filter-menu-list li {
+        float: left;
+        margin-right: 1em;
+        display: inline-block; }
+        #content #filter-menu .filter-menu-list li:last-child {
+          margin-right: 0em; }
+        #content #filter-menu .filter-menu-list li button {
+          padding: 0em 1em;
+          line-height: 30px;
+          width: auto;
+          height: 32px; }
+          #content #filter-menu .filter-menu-list li button .fa {
+            font-size: 14px;
+            margin-right: 10px; }
   #content #tools-list {
     float: left;
     clear: both;
     padding: 1em;
     position: relative;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-flex-wrap: wrap;
-    -moz-box-flex-wrap: wrap;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-flex-direction: row;
-    -moz-box-flex-direction: row;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    align-items: flex-start;
-    align-content: flex-start;
     width: 100%;
-    height: 100%; }
+    height: auto !important; }
+    #content #tools-list[data-view="grid"] {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-flex-wrap: wrap;
+      -moz-box-flex-wrap: wrap;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-flex-direction: row;
+      -moz-box-flex-direction: row;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      align-items: flex-start;
+      align-content: flex-start; }
+      #content #tools-list[data-view="grid"] li {
+        -webkit-backface-visibility: hidden;
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        width: 20%;
+        height: auto; }
+        @media (max-width: 1600px) {
+          #content #tools-list[data-view="grid"] li {
+            width: 25%;
+            height: auto; } }
+        @media (max-width: 1400px) {
+          #content #tools-list[data-view="grid"] li {
+            width: 33.33333%;
+            height: auto; } }
+        @media (max-width: 1120px) {
+          #content #tools-list[data-view="grid"] li {
+            width: 50%;
+            height: auto; } }
+        @media (max-width: 900px) {
+          #content #tools-list[data-view="grid"] li {
+            width: 100%;
+            height: auto; } }
+        #content #tools-list[data-view="grid"] li .tool .thumbnail {
+          clear: both;
+          display: block;
+          margin: 0px 0px 15px 0px;
+          width: 100%;
+          height: 0px; }
+        #content #tools-list[data-view="grid"] li .tool .details {
+          clear: both;
+          padding: 0px 10px;
+          margin-bottom: 20px;
+          width: 100%;
+          height: auto; }
+          #content #tools-list[data-view="grid"] li .tool .details h2 {
+            font-size: 1em; }
+          #content #tools-list[data-view="grid"] li .tool .details p {
+            font-size: 11px;
+            margin-top: 7px;
+            max-height: 32px; }
+            #content #tools-list[data-view="grid"] li .tool .details p.short-description {
+              display: block;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+              cursor: help;
+              overflow: hidden;
+              line-height: 1.35;
+              text-overflow: ellipsis; }
+        #content #tools-list[data-view="grid"] li .tool .actions {
+          float: left;
+          clear: both;
+          position: relative;
+          margin: 0px 0px 10px 0px;
+          width: 100%;
+          height: auto; }
+          #content #tools-list[data-view="grid"] li .tool .actions li {
+            width: 50%;
+            height: auto; }
+            #content #tools-list[data-view="grid"] li .tool .actions li .tool-action {
+              padding: 10px;
+              width: 100%;
+              height: 40px; }
+    #content #tools-list[data-view="list"] {
+      height: auto !important; }
+      #content #tools-list[data-view="list"] li {
+        clear: both;
+        width: 100%;
+        height: auto; }
+        #content #tools-list[data-view="list"] li .tool .thumbnail {
+          margin: 0px;
+          display: inline-block;
+          padding-bottom: 14.666%;
+          width: 25%;
+          height: 0px; }
+        #content #tools-list[data-view="list"] li .tool .details {
+          padding: 1em;
+          display: inline-block;
+          width: 75%;
+          height: auto; }
+          #content #tools-list[data-view="list"] li .tool .details h2 {
+            font-size: 1.35em; }
+          #content #tools-list[data-view="list"] li .tool .details p {
+            font-size: 12px;
+            margin-top: 7px; }
+            #content #tools-list[data-view="list"] li .tool .details p.short-description {
+              display: block;
+              line-height: 1.3; }
+        #content #tools-list[data-view="list"] li .tool .actions {
+          left: 25%;
+          bottom: 0px;
+          margin-left: 2em;
+          position: absolute;
+          width: auto;
+          height: auto; }
+          #content #tools-list[data-view="list"] li .tool .actions li {
+            clear: none;
+            width: auto;
+            height: auto; }
+            #content #tools-list[data-view="list"] li .tool .actions li .tool-action {
+              padding: 10px 20px;
+              width: auto;
+              height: 40px; }
     @media (max-width: 600px) {
       #content #tools-list {
         padding: 1em 0em;
         min-height: 100vh; } }
     #content #tools-list li {
       float: left;
-      padding: 1em;
-      -webkit-backface-visibility: hidden;
-      -webkit-transform-style: preserve-3d;
-      -moz-transform-style: preserve-3d;
-      -ms-transform-style: preserve-3d;
-      transform-style: preserve-3d;
-      position: relative;
       display: none;
-      width: 20%;
-      height: auto; }
-      @media (max-width: 1600px) {
-        #content #tools-list li {
-          width: 25%;
-          height: auto; } }
-      @media (max-width: 1400px) {
-        #content #tools-list li {
-          width: 33.33333%;
-          height: auto; } }
-      @media (max-width: 1120px) {
-        #content #tools-list li {
-          width: 50%;
-          height: auto; } }
-      @media (max-width: 900px) {
-        #content #tools-list li {
-          width: 100%;
-          height: auto; } }
+      position: relative;
+      padding: 1em; }
       #content #tools-list li .tool {
         float: left;
         padding: 0px;
@@ -813,16 +934,11 @@ aside {
             max-height: initial; } }
         #content #tools-list li .tool .thumbnail {
           float: left;
-          clear: both;
-          display: block;
           overflow: hidden;
           position: relative;
           padding-bottom: 54%;
           background-repeat: no-repeat;
           background-position: top center;
-          margin: 0px 0px 15px 0px;
-          width: 100%;
-          height: 0px;
           -webkit-background-size: cover;
           -moz-background-size: cover;
           -o-background-size: cover;
@@ -882,15 +998,9 @@ aside {
             opacity: 1;
             filter: alpha(opacity=100); }
         #content #tools-list li .tool .details {
-          float: left;
-          clear: both;
-          padding: 0px 10px;
-          margin-bottom: 20px;
-          width: 100%;
-          height: auto; }
+          float: left; }
           #content #tools-list li .tool .details h2 {
             color: #444;
-            font-size: 1em;
             font-weight: 600;
             width: 100%;
             height: auto; }
@@ -903,25 +1013,9 @@ aside {
               text-decoration: none; }
           #content #tools-list li .tool .details p {
             color: #999;
-            font-size: 11px;
-            margin-top: 7px;
-            max-height: 32px;
             width: 100%;
             height: auto; }
-            @media (max-width: 600px) {
-              #content #tools-list li .tool .details p {
-                font-size: 12px;
-                margin-top: 0px;
-                max-height: initial; } }
             #content #tools-list li .tool .details p.short-description {
-              display: block;
-              display: -webkit-box;
-              -webkit-line-clamp: 2;
-              -webkit-box-orient: vertical;
-              cursor: help;
-              line-height: 1.3;
-              text-overflow: ellipsis;
-              overflow: hidden;
               width: 100%;
               height: auto; }
               @media (max-width: 600px) {
@@ -938,34 +1032,23 @@ aside {
               margin-right: 7px;
               display: inline-block; }
         #content #tools-list li .tool .actions {
-          float: left;
-          clear: both;
-          display: block;
-          position: relative;
-          margin: 0px 0px 10px 0px;
-          width: 100%;
-          height: auto; }
+          display: block; }
           #content #tools-list li .tool .actions li {
             float: left;
             padding: 0px;
-            display: inline-block;
-            width: 50%;
-            height: auto; }
+            display: inline-block; }
             #content #tools-list li .tool .actions li:last-child {
               border-left: 1px solid #e0e2e8; }
             #content #tools-list li .tool .actions li .tool-action {
               float: left;
               border: 0px;
               outline: none;
-              padding: 10px;
               color: #9c9fa5;
               font-size: 16px;
               line-height: 16px;
               text-align: center;
               position: relative;
-              background: transparent;
-              width: 100%;
-              height: 40px; }
+              background: transparent; }
               #content #tools-list li .tool .actions li .tool-action .action-button-content {
                 top: 0px;
                 left: 0px;

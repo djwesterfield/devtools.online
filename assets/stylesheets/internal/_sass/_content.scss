@@ -213,6 +213,88 @@
 
   }
 
+  #filter-menu {
+
+    clear: both;
+    float: left;
+    margin: 0px;
+    position: relative;
+    display: inline-block;
+    padding: 2em 2em 0em 2em;
+
+    @include size(100%, auto);
+
+    .filter-menu-list {
+
+      position: relative;
+      display: inline-block;
+
+      &#nav-filter-options {
+
+        float: left;
+
+      }
+
+      &#nav-view-options {
+
+        float: right;
+
+        li {
+
+          button {
+
+            padding: 0em 1em;
+            line-height: 30px;
+
+            @include size(auto, 32px);
+
+            .fa {
+
+              font-size: 14px;
+              margin-right: 10px;
+
+            }
+
+          }
+
+        }
+
+      }
+
+      li {
+
+        float: left;
+        margin-right: 1em;
+        display: inline-block;
+
+        &:last-child {
+
+          margin-right: 0em;
+
+        }
+
+        button {
+
+          padding: 0em 1em;
+          line-height: 30px;
+
+          @include size(auto, 32px);
+
+          .fa {
+
+            font-size: 14px;
+            margin-right: 10px;
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
   #tools-list {
 
     float: left;
@@ -220,28 +302,230 @@
     padding: 1em;
     position: relative;
 
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
+    @include size(100%, auto!important);
 
-    -webkit-box-flex-wrap: wrap;
-    -moz-box-flex-wrap: wrap;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+    &[data-view="grid"] {
 
-    -webkit-box-flex-direction: row;
-    -moz-box-flex-direction: row;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
 
-    align-items: flex-start;
-    align-content: flex-start;
+      -webkit-box-flex-wrap: wrap;
+      -moz-box-flex-wrap: wrap;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 
-    @include size(100%);
+      -webkit-box-flex-direction: row;
+      -moz-box-flex-direction: row;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+
+      align-items: flex-start;
+      align-content: flex-start;
+
+      li {
+
+        -webkit-backface-visibility: hidden;
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+
+        @include size(100% / $columns_five, auto);
+
+        @media(max-width: $break_four) {
+
+          @include size(100% / $columns_four, auto);
+
+        }
+
+        @media(max-width: $break_three) {
+
+          @include size(100% / $columns_three, auto);
+
+        }
+
+        @media(max-width: $break_two) {
+
+          @include size(100% / $columns_two, auto);
+
+        }
+
+        @media(max-width: $break_one) {
+
+          @include size(100% / $columns_one, auto);
+
+        }
+
+        .tool {
+
+          .thumbnail {
+
+            clear: both;
+            display: block;
+            margin: 0px 0px 15px 0px;
+
+            @include size(100%, 0px);
+
+          }
+
+          .details {
+
+            clear: both;
+            padding: 0px 10px;
+            margin-bottom: 20px;
+
+            @include size(100%, auto);
+
+            h2 {
+
+              font-size: 1em;
+
+            }
+
+            p {
+
+              font-size: 11px;
+              margin-top: 7px;
+              max-height: 32px;
+
+              &.short-description {
+
+                display: block;
+                display: -webkit-box;
+
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+
+                cursor: help;
+                overflow: hidden;
+                line-height: 1.35;
+                text-overflow: ellipsis;
+
+              }
+
+            }
+
+          }
+
+          .actions {
+
+            float: left;
+            clear: both;
+            position: relative;
+            margin: 0px 0px 10px 0px;
+
+            @include size(100%, auto);
+
+            li {
+
+              @include size(50%, auto);
+
+              .tool-action {
+
+                padding: 10px;
+
+                @include size(100%, 40px);
+
+              }
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+    &[data-view="list"] {
+
+      height: auto !important;
+
+      li {
+
+        clear: both;
+
+        @include size(100%, auto);
+
+        .tool {
+
+          .thumbnail {
+
+            margin: 0px;
+            display: inline-block;
+            padding-bottom: 14.666%;
+
+            @include size(25%, 0px);
+
+          }
+
+          .details {
+
+            padding: 1em;
+            display: inline-block;
+
+            @include size(75%, auto);
+
+            h2 {
+
+              font-size: 1.35em;
+
+            }
+
+            p {
+
+              font-size: 12px;
+              margin-top: 7px;
+
+              &.short-description {
+
+                display: block;
+                line-height: 1.3;
+
+              }
+
+            }
+
+          }
+
+          .actions {
+
+            left: 25%;
+            bottom: 0px;
+            margin-left: 2em;
+            position: absolute;
+
+            @include size(auto);
+
+            li {
+
+              clear: none;
+
+              @include size(auto);
+
+              .tool-action {
+
+                padding: 10px 20px;
+
+                @include size(auto, 40px);
+
+              }
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
 
     @media(max-width: $mobile_break) {
 
@@ -253,44 +537,9 @@
     li {
 
       float: left;
-      padding: $column_padding;
-
-      // display: inline-block;
-
-      -webkit-backface-visibility: hidden;
-      -webkit-transform-style: preserve-3d;
-      -moz-transform-style: preserve-3d;
-      -ms-transform-style: preserve-3d;
-      transform-style: preserve-3d;
-
-      position: relative;
       display: none;
-
-      @include size(100% / $columns_five, auto);
-
-      @media(max-width: $break_four) {
-
-        @include size(100% / $columns_four, auto);
-
-      }
-
-      @media(max-width: $break_three) {
-
-        @include size(100% / $columns_three, auto);
-
-      }
-
-      @media(max-width: $break_two) {
-
-        @include size(100% / $columns_two, auto);
-
-      }
-
-      @media(max-width: $break_one) {
-
-        @include size(100% / $columns_one, auto);
-
-      }
+      position: relative;
+      padding: $column_padding;
 
       .tool {
 
@@ -314,16 +563,12 @@
         .thumbnail {
 
            float: left;
-           clear: both;
-           display: block;
            overflow: hidden;
            position: relative;
            padding-bottom: 54%;
            background-repeat: no-repeat;
            background-position: top center;
-           margin: 0px 0px 15px 0px;
 
-           @include size(100%, 0px);
            @include backgroundsize(cover);
 
            .thumb-actions {
@@ -405,16 +650,10 @@
         .details {
 
           float: left;
-          clear: both;
-          padding: 0px 10px;
-          margin-bottom: 20px;
-
-          @include size(100%, auto);
 
           h2 {
 
             color: #444;
-            font-size: 1em;
             font-weight: 600;
 
             @include size(100%, auto);
@@ -438,33 +677,10 @@
           p {
 
             color: #999;
-            font-size: 11px;
-            margin-top: 7px;
-            max-height: 32px;
 
             @include size(100%, auto);
 
-            @media(max-width: $mobile_break) {
-
-              font-size: 12px;
-              margin-top: 0px;
-              max-height: initial;
-
-            }
-
             &.short-description {
-
-              display: block;
-              display: -webkit-box;
-
-              -webkit-line-clamp: 2;
-              -webkit-box-orient: vertical;
-
-              cursor: help;
-
-              line-height: 1.3;
-              text-overflow: ellipsis;
-              overflow: hidden;
 
               @include size(100%, auto);
 
@@ -497,22 +713,13 @@
 
         .actions {
 
-          float: left;
-          clear: both;
-
           display: block;
-          position: relative;
-          margin: 0px 0px 10px 0px;
-
-          @include size(100%, auto);
 
           li {
 
             float: left;
             padding: 0px;
             display: inline-block;
-
-            @include size(50%, auto);
 
             &:last-child {
 
@@ -525,15 +732,12 @@
               float: left;
               border: 0px;
               outline: none;
-              padding: 10px;
               color: #9c9fa5;
               font-size: 16px;
               line-height: 16px;
               text-align: center;
               position: relative;
               background: transparent;
-
-              @include size(100%, 40px);
 
               .action-button-content {
 
