@@ -322,6 +322,8 @@
 
             this.loadCategories = function(callback) {
 
+              var cats = [];
+
               DevTools.Firebase.child('categories').once('value', function(snapshot) {
 
                 var categoryCount = Object.keys(snapshot.val()).length;
@@ -329,24 +331,33 @@
 
                 $.each(snapshot.val(), function(id, category) {
 
+                  cats[category.order] = {
+                    'id': id,
+                    'data': category
+                  };
+
+                });
+
+                $.each(cats, function(catid, category) {
+
                   categoryThis++;
 
-                  if(category.visible === true) {
+                  if(category.data.visible === true) {
 
-                    var output = '<li><a class="category-selector tool-filter pointer" href="' + DevTools.Location + '#!/' + category.hash + '/everything/" data-active="false" data-filter=".' + category.hash + '"><i class="fa fa-' + category.icon + '"></i>' + category.name + '</a></li>';
+                    var output = '<li><a class="category-selector tool-filter pointer" href="' + DevTools.Location + '#!/' + category.data.hash + '/everything/" data-active="false" data-filter=".' + category.data.hash + '"><i class="fa fa-' + category.data.icon + '"></i>' + category.data.name + '</a></li>';
 
                     $categoryNav.append(output);
 
                   }
 
-                  if(category.tags && category.visible === true) {
+                  if(category.data.tags && category.data.visible === true) {
 
-                    var tagsCount = category.tags.length;
+                    var tagsCount = category.data.tags.length;
                     var tagThis   = 0;
 
                     var tags = [];
 
-                    $.each(category.tags, function(id, tag) {
+                    $.each(category.data.tags, function(id, tag) {
 
                       tags[tag.order] = {
                         'id': id,
@@ -357,11 +368,11 @@
 
                     $.each(tags, function(order, tag) {
 
-                      var filters = tag.data.hash === 'everything' ? 'all, .' + category.hash : '.' + category.hash + '.' + tag.data.hash ;
+                      var filters = tag.data.hash === 'everything' ? 'all, .' + category.data.hash : '.' + category.data.hash + '.' + tag.data.hash ;
 
-                      if($('.tag-selector[data-category="' + category.hash + '"][data-tag="' + tag.data.hash + '"]').length === 0) {
+                      if($('.tag-selector[data-category="' + category.data.hash + '"][data-tag="' + tag.data.hash + '"]').length === 0) {
 
-                        var output = '<li><a class="tag-selector pointer tool-filter" href="' + DevTools.Location + '#!/' + category.hash + '/' +tag.data.hash + '/" data-active="false" data-category="' + category.hash + '" data-filter="' + filters + '" data-tag="' + tag.data.hash + '"><label>' + tag.data.name + '<span>0</span></label></a></li>';
+                        var output = '<li><a class="tag-selector pointer tool-filter" href="' + DevTools.Location + '#!/' + category.data.hash + '/' +tag.data.hash + '/" data-active="false" data-category="' + category.data.hash + '" data-filter="' + filters + '" data-tag="' + tag.data.hash + '"><label>' + tag.data.name + '<span>0</span></label></a></li>';
 
                         $tagNav.append(output);
 

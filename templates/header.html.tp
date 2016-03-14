@@ -28,13 +28,8 @@
     </button>
 
     <div class="pointer" id="user-info">
-
       <img id="user-avatar">
       <label id="user-name"></label>
-      <span class="fa fa-chevron-down"></span>
-
-      <ul id="user-menu"></ul>
-
     </div>
 
   </div>

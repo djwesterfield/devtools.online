@@ -1103,10 +1103,10 @@ footer {
   height: 100%;
   opacity: 0;
   filter: alpha(opacity=0);
-  -webkit-transition: opacity 0.5s ease 0s;
-  -moz-transition: opacity 0.5s ease 0s;
-  -ms-transition: opacity 0.5s ease 0s;
-  transition: opacity 0.5s ease 0s; }
+  -webkit-transition: opacity 0.245s ease 0s;
+  -moz-transition: opacity 0.245s ease 0s;
+  -ms-transition: opacity 0.245s ease 0s;
+  transition: opacity 0.245s ease 0s; }
   #modal-container[data-visible="true"] {
     z-index: 99999;
     opacity: 1;
@@ -1123,10 +1123,10 @@ footer {
     -webkit-transform: translate(-50%, -40%);
     -ms-transform: translate(-50%, -40%);
     transform: translate(-50%, -40%);
-    -webkit-transition: all 0.5s ease 0s;
-    -moz-transition: all 0.5s ease 0s;
-    -ms-transition: all 0.5s ease 0s;
-    transition: all 0.5s ease 0s; }
+    -webkit-transition: all 0.245s ease 0s;
+    -moz-transition: all 0.245s ease 0s;
+    -ms-transition: all 0.245s ease 0s;
+    transition: all 0.245s ease 0s; }
     @media (max-width: 600px) {
       #modal-container modal.modal-window {
         max-width: 100%;
@@ -1142,10 +1142,10 @@ footer {
       -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
-      -webkit-transition: all 0.5s ease 0s;
-      -moz-transition: all 0.5s ease 0s;
-      -ms-transition: all 0.5s ease 0s;
-      transition: all 0.5s ease 0s; }
+      -webkit-transition: all 0.245s ease 0s;
+      -moz-transition: all 0.245s ease 0s;
+      -ms-transition: all 0.245s ease 0s;
+      transition: all 0.245s ease 0s; }
     #modal-container modal.modal-window[data-visible="false"] {
       opacity: 0;
       filter: alpha(opacity=0);
@@ -1153,10 +1153,10 @@ footer {
       -webkit-transform: translate(-50%, -40%);
       -ms-transform: translate(-50%, -40%);
       transform: translate(-50%, -40%);
-      -webkit-transition: all 0.5s ease 0s;
-      -moz-transition: all 0.5s ease 0s;
-      -ms-transition: all 0.5s ease 0s;
-      transition: all 0.5s ease 0s; }
+      -webkit-transition: all 0.245s ease 0s;
+      -moz-transition: all 0.245s ease 0s;
+      -ms-transition: all 0.245s ease 0s;
+      transition: all 0.245s ease 0s; }
     #modal-container modal.modal-window .modal-header,
     #modal-container modal.modal-window .modal-content {
       float: left;
@@ -1280,7 +1280,6 @@ body {
   float: right;
   color: white;
   display: none;
-  min-width: 180px;
   position: relative;
   background: #2a343c;
   border-radius: 4px;
@@ -1329,7 +1328,6 @@ body {
     left: 0px;
     top: 100%;
     z-index: -99999;
-    min-height: 200px;
     position: absolute;
     visibility: hidden;
     background: #35414b;
@@ -1343,6 +1341,14 @@ body {
     -moz-transition: all 0.265s ease 0s;
     -ms-transition: all 0.265s ease 0s;
     transition: all 0.265s ease 0s; }
+    #user-info #user-menu li {
+      clear: both;
+      float: left;
+      padding: 1em;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      display: inline-block;
+      width: 100%;
+      height: auto; }
   #user-info:hover {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px; }
