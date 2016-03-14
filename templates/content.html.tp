@@ -21,6 +21,8 @@
 
   <ul id="tools-list"></ul>
 
-  {{include:footer}}
+  <div id="fourohfour">
+    Sorry no tools found :(
+  </div>
 
 </section>

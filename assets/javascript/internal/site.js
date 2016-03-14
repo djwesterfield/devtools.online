@@ -23,7 +23,7 @@
     DevTools.Description = 'A massive online collection of tools, links, and resources for web designers & developers.';
     DevTools.Timestamp   = +new Date;
 
-    DevTools.Location = window.productionMode ? 'https://www.devtools.online/' : 'http://localhost/devtools.online/';
+    DevTools.Location = window.productionMode ? 'https://www.devtools.online/' : 'http://hackerspace/devtools.online/';
     DevTools.Firebase = new Firebase('https://devtoolsonline.firebaseio.com/');
 
     DevTools.Authenticated;
@@ -94,6 +94,8 @@
     var $tagSelector      = null;
     var $btnAction        = null;
     var $btnDetails       = null;
+
+    var $fourohfour = $('#fourohfour');
 
     // =======================================================
     // creates namespace provider which helps isolate
@@ -342,13 +344,24 @@
                     var tagsCount = category.tags.length;
                     var tagThis   = 0;
 
+                    var tags = [];
+
                     $.each(category.tags, function(id, tag) {
 
-                      var filters = tag.hash === 'everything' ? 'all, .' + category.hash : '.' + category.hash + '.' + tag.hash ;
+                      tags[tag.order] = {
+                        'id': id,
+                        'data': tag
+                      };
 
-                      if($('.tag-selector[data-category="' + category.hash + '"][data-tag="' + tag.hash + '"]').length === 0) {
+                    });
 
-                        var output = '<li><a class="tag-selector pointer tool-filter" href="' + DevTools.Location + '#!/' + category.hash + '/' +tag.hash + '/" data-active="false" data-category="' + category.hash + '" data-filter="' + filters + '" data-tag="' + tag.hash + '"><label>' + tag.name + '<span>0</span></label></a></li>';
+                    $.each(tags, function(order, tag) {
+
+                      var filters = tag.data.hash === 'everything' ? 'all, .' + category.hash : '.' + category.hash + '.' + tag.data.hash ;
+
+                      if($('.tag-selector[data-category="' + category.hash + '"][data-tag="' + tag.data.hash + '"]').length === 0) {
+
+                        var output = '<li><a class="tag-selector pointer tool-filter" href="' + DevTools.Location + '#!/' + category.hash + '/' +tag.data.hash + '/" data-active="false" data-category="' + category.hash + '" data-filter="' + filters + '" data-tag="' + tag.data.hash + '"><label>' + tag.data.name + '<span>0</span></label></a></li>';
 
                         $tagNav.append(output);
 
@@ -1229,11 +1242,11 @@
 
                           if(!toolsVisible || toolsVisible == 0) {
 
-                            console.log('NO TOOLS FOUND!');
+                            $fourohfour.show();
 
                           }else{
 
-                            console.log(toolsVisible + ' TOOLS FOUND!');
+                            $fourohfour.hide();
 
                           }
 

@@ -2,7 +2,9 @@
 
   <div id="footer-content">
 
-    <div id="footer-social" class="addthis_native_toolbox"></div>
+    <div id="footer-social" class="addthis_native_toolbox" data-url="https://www.devtools.online/"></div>
+
+    <iframe id="github-btn" src="https://ghbtns.com/github-btn.html?user=thinkpixels&repo=devtools.online&type=star&count=true" frameborder="0" scrolling="0" height="20px"></iframe>
 
     <script id='fb34os0'>(function(i){var f,s=document.getElementById(i);f=document.createElement('iframe');f.id='flattr-btn';f.src='//button.flattr.com/view/?fid=x73j3q&button=compact&url=https%3A%2F%2Fwww.devtools.online%2F';f.title='Flattr';f.height=20;f.width=110;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})('fb34os0');</script>
 

@@ -175,7 +175,7 @@
         margin-bottom: 1em;
         text-align: center;
         color: rgba(white, 1);
-        border-radius: $user_avatar_size;
+        border-radius: 4px;
 
         @include size(100%, auto);
 

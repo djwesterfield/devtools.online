@@ -26,9 +26,9 @@ footer {
   #footer-content {
 
     float: left;
-    padding: 2em;
     position: relative;
     display: inline-block;
+    padding: 1.5em 2em 2em 2em;
 
     @include size(100%, auto);
 
@@ -47,12 +47,17 @@ footer {
 
     }
 
+    #github-btn,
     #flattr-btn {
 
       float: left;
-      margin-right: 2em;
+      margin-right: 2px;
       display: inline-block;
 
+    }
+
+    #github-btn {
+      max-width: 80px;
     }
 
     .addthis_toolbox a {

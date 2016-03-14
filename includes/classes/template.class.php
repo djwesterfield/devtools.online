@@ -38,6 +38,7 @@ class Template {
     $this->set_twitter_title(TWITTER_TITLE);
     $this->set_twitter_description(TWITTER_DESCRIPTION);
     $this->set_tracking_codes(GA_TRACKING_UAT, GA_TRACKING_PROD);
+    $this->set_prod_url('https://www.devtools.online/');
     $this->googlefonts([
       'Open+Sans' => [
         300,
@@ -204,6 +205,10 @@ class Template {
 
   public function set_url($url) {
     $this->values['url'] = $url;
+  }
+
+  public function set_prod_url($url) {
+    $this->values['url:prod'] = $url;
   }
 
   public function set_image($image) {

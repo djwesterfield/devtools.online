@@ -23,7 +23,7 @@
 <meta name="application-name" content="{{title}}">
 
 <meta name="og:type" content="website">
-<meta name="og:url" content="{{url}}">
+<meta name="og:url" content="{{url:prod}}">
 <meta name="og:image" content="{{og:image}}">
 <meta name="og:title" content="{{og:title}}">
 <meta name="og:description" content="{{og:description}}">
@@ -31,7 +31,7 @@
 <meta name="twitter:card" content="{{twitter:card}}">
 <meta name="twitter:site" content="@sebastian_inman">
 <meta name="twitter:creator" content="@sebastian_inman">
-<meta name="twitter:url" content="{{url}}">
+<meta name="twitter:url" content="{{url:prod}}">
 <meta name="twitter:image" content="{{twitter:image}}">
 <meta name="twitter:title" content="{{twitter:title}}">
 <meta name="twitter:description" content="{{twitter:description}}">
@@ -56,6 +56,7 @@
 {{include:header}}
 {{include:sidebar}}
 {{include:content}}
+{{include:footer}}
 {{include:modals}}
 
 <!--[if lt IE 10]></div><![endif]-->

@@ -319,6 +319,7 @@
            overflow: hidden;
            position: relative;
            padding-bottom: 54%;
+           border: 1px solid white;
            background-repeat: no-repeat;
            background-position: top center;
            margin: 0px 0px 15px 0px;
@@ -413,7 +414,7 @@
 
           h2 {
 
-            color: #444;
+            color: #222;
             font-size: 1em;
             font-weight: 600;
 
@@ -437,7 +438,7 @@
 
           p {
 
-            color: #999;
+            color: #666;
             font-size: 11px;
             margin-top: 7px;
             max-height: 32px;
@@ -671,6 +672,17 @@
       }
 
     }
+
+  }
+
+  #fourohfour {
+
+    z-index: -1;
+    padding: 1em;
+    display: none;
+    position: relative;
+
+    @include size(100%, auto);
 
   }
 

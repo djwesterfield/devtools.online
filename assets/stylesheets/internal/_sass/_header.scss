@@ -229,7 +229,7 @@
       position: relative;
       display: inline-block;
 
-      @include size(auto, 100%);
+      @include size(auto, 40px);
 
       @media(max-width: $mobile_break) {
 
