@@ -59,27 +59,23 @@ class Template {
     global $font_response;
     $output = '<link href="https://fonts.googleapis.com/css?family=';
 
-    if(DEV_MODE === true) {
+    foreach($fonts as $font => $weights) {
 
-      foreach($fonts as $font => $weights) {
+      $output .= $font . ':';
 
-        $output .= $font . ':';
+      foreach($weights as $weight) {
 
-        foreach($weights as $weight) {
-
-          $output .= $weight . ',';
-
-        }
-
-        $output .= '|';
+        $output .= $weight . ',';
 
       }
 
-      $output .= '" rel="stylesheet">';
-
-      return $output;
+      $output .= '|';
 
     }
+
+    $output .= '" rel="stylesheet">';
+
+    return $output;
 
   }
 
