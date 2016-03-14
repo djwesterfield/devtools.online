@@ -3,7 +3,7 @@ footer {
   left: 0px;
   bottom: 0px;
   background: white;
-  position: absolute;
+  position: fixed;
   margin-bottom: -13px;
   border-top: 1px solid $border_color;
 
@@ -35,7 +35,7 @@ footer {
     #footer-social {
 
       float: left;
-      margin-right: 2em;
+      margin-right: 2px;
       position: relative;
       display: inline-block;
 
@@ -44,6 +44,14 @@ footer {
         margin-bottom: 2em;
 
       }
+
+    }
+
+    #flattr-btn {
+
+      float: left;
+      margin-right: 2em;
+      display: inline-block;
 
     }
 
