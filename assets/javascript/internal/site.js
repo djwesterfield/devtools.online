@@ -454,13 +454,13 @@
                     var output  = '<li itemscope itemtype="http://schema.org/WebPage" class="mix ' + tool.category + ' ' + tagClasses + ' ' + tool.hash + '" data-likes="'+tool.likes+'" data-saves="'+tool.favorites+'"><div class="tool" data-id="' + id + '" data-hash="' + tool.hash + '" data-category="' + tool.category + '" data-tags="' + tool.tags + '">';
                         output +=   '<div class="thumbnail" style="/*background-image:url(' + tool.thumbnail + ');*/">';
                         output +=     '<div class="thumb-actions">';
-                        output +=       '<a title="' + tool.url + '" href="' + tool_link + '" rel="external" target="new"><i class="fa fa-link"></i></a>';
+                        output +=       '<a title="' + tool.url + '" href="' + tool_link + '" rel="external" target="' + tool.name + '"><i class="fa fa-link"></i></a>';
                         output +=       '<a class="more-info tool-link" data-tool="' + tool.hash + '" href="' + DevTools.Location + '#!/' + DevTools.Category + '/' + DevTools.Tag + '/' + tool.hash + '/" title="More information about ' + tool.name + '"><i class="fa fa-info"></i></a>';
                         output +=     '</div>';
                         output +=     '<img alt="' + imageAlt + '" src="' + tool.thumbnail + '">';
                         output +=   '</div>';
                         output +=   '<div itemprop="mainContentOfPage" class="details">';
-                        output +=     '<h2><a itemprop="significantLink" class="tool-link" href="' + tool_link + '" rel="external" target="new" title="' + tool.url + '">' + tool.name + '</a></h2>';
+                        output +=     '<h2><a itemprop="significantLink" class="tool-link" href="' + tool_link + '" rel="external" target="' + tool.name + '" title="' + tool.url + '">' + tool.name + '</a></h2>';
                         output +=     '<p>' + tagList() + '</p>';
                         output +=     '<p itemprop="about" class="short-description edit-desc" title="' + toolDescription + '">' + toolDescription + '</p>';
                         output +=   '</div>';
@@ -1225,7 +1225,7 @@
 
                           animation: {
                             enable: true,
-                            effects: 'fade scale stagger(50ms)'
+                            effects: 'fade scale stagger(10ms)'
                           },
 
                           selectors: {
