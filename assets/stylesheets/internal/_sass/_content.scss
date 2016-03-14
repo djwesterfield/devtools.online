@@ -297,7 +297,7 @@
         float: left;
         padding: 0px;
         background: white;
-        max-height: 308px;
+        // max-height: 308px;
         // border-radius: 4px;
         overflow: hidden;
         display: inline-block;
@@ -441,7 +441,7 @@
             color: #666;
             font-size: 11px;
             margin-top: 7px;
-            max-height: 32px;
+            // max-height: 32px;
 
             @include size(100%, auto);
 
@@ -458,14 +458,14 @@
               display: block;
               display: -webkit-box;
 
-              -webkit-line-clamp: 2;
-              -webkit-box-orient: vertical;
+              // -webkit-line-clamp: 2;
+              // -webkit-box-orient: vertical;
 
               cursor: help;
 
               line-height: 1.3;
-              text-overflow: ellipsis;
-              overflow: hidden;
+              // text-overflow: ellipsis;
+              // overflow: hidden;
 
               @include size(100%, auto);
 

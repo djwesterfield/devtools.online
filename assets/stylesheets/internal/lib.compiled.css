@@ -234,7 +234,7 @@ table {
   left: 0px;
   z-index: 200;
   position: fixed;
-  padding-left: 320px;
+  padding-left: 300px;
   background-color: #242B34;
   width: 100%;
   height: 80px; }
@@ -269,14 +269,20 @@ table {
     top: 0px;
     left: 0px;
     position: absolute;
+    text-align: center;
     padding: 1.35em 2em 1.5em 2em;
     background-color: rgba(0, 0, 0, 0.25);
-    width: 320px;
+    width: 300px;
     height: 100%; }
     @media (max-width: 600px) {
       #page-header #logo-container {
         width: 100%;
         height: 100%; } }
+    #page-header #logo-container h1, #page-header #logo-container h2 {
+      clear: both;
+      float: left;
+      width: 100%;
+      height: auto; }
     #page-header #logo-container h1 {
       color: white;
       font-size: 1.55em;
@@ -292,10 +298,10 @@ table {
           font-size: 1.35em; } }
     #page-header #logo-container h2 {
       color: #858585;
-      font-size: 9px;
+      font-size: 0.68em;
       font-weight: 300;
       margin-top: 3px;
-      letter-spacing: 0.55px;
+      letter-spacing: 0.062em;
       text-transform: uppercase; }
       @media (max-width: 600px) {
         #page-header #logo-container h2 {
@@ -425,7 +431,7 @@ aside {
   bottom: 0px;
   top: 80px;
   position: fixed;
-  width: 320px;
+  width: 300px;
   background-color: #242b34; }
   @media (max-width: 600px) {
     aside {
@@ -449,7 +455,7 @@ aside {
       z-index: 1;
       position: absolute;
       background-color: #2a343c;
-      width: 100px;
+      width: 80px;
       height: 100%; }
       @media (max-width: 600px) {
         aside nav#category-nav {
@@ -480,7 +486,7 @@ aside {
           color: rgba(255, 255, 255, 0.35);
           text-align: center;
           border-left: 4px solid transparent;
-          width: 100px;
+          width: 80px;
           height: auto; }
           @media (max-width: 600px) {
             aside nav#category-nav li .category-selector {
@@ -498,7 +504,7 @@ aside {
           aside nav#category-nav li .category-selector .fa {
             float: left;
             clear: both;
-            font-size: 3em;
+            font-size: 2em;
             margin-bottom: 10px;
             width: 100%;
             height: auto; }
@@ -512,7 +518,7 @@ aside {
       bottom: 0px;
       padding: 1em;
       overflow-y: auto;
-      left: 100px; }
+      left: 80px; }
       @media (max-width: 600px) {
         aside nav#tag-nav {
           left: 0px;
@@ -604,7 +610,7 @@ aside {
   position: relative;
   padding-bottom: 6em;
   padding-top: 80px;
-  padding-left: 320px;
+  padding-left: 300px;
   background-color: #e3e8ed;
   width: 100%;
   height: auto; }
@@ -802,7 +808,6 @@ aside {
         float: left;
         padding: 0px;
         background: white;
-        max-height: 308px;
         overflow: hidden;
         display: inline-block;
         box-shadow: 0px 1px 3px -2px rgba(0, 0, 0, 0.65);
@@ -906,7 +911,6 @@ aside {
             color: #666;
             font-size: 11px;
             margin-top: 7px;
-            max-height: 32px;
             width: 100%;
             height: auto; }
             @media (max-width: 600px) {
@@ -917,12 +921,8 @@ aside {
             #content #tools-list li .tool .details p.short-description {
               display: block;
               display: -webkit-box;
-              -webkit-line-clamp: 2;
-              -webkit-box-orient: vertical;
               cursor: help;
               line-height: 1.3;
-              text-overflow: ellipsis;
-              overflow: hidden;
               width: 100%;
               height: auto; }
               @media (max-width: 600px) {
@@ -1044,7 +1044,7 @@ aside {
   right: 0px;
   bottom: 0px;
   top: 180px;
-  left: 320px;
+  left: 300px;
   z-index: -1000;
   display: none;
   background: red;
@@ -1060,7 +1060,7 @@ footer {
   position: fixed;
   margin-bottom: -13px;
   border-top: 1px solid #CCCCCC;
-  padding-left: 320px;
+  padding-left: 300px;
   width: 100%;
   height: auto; }
   @media (max-width: 600px) {
