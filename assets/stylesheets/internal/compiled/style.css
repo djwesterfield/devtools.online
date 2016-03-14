@@ -1027,7 +1027,7 @@ footer {
   left: 0px;
   bottom: 0px;
   background: white;
-  position: absolute;
+  position: fixed;
   margin-bottom: -13px;
   border-top: 1px solid #CCCCCC;
   padding-left: 320px;
@@ -1051,12 +1051,16 @@ footer {
     height: auto; }
     footer #footer-content #footer-social {
       float: left;
-      margin-right: 2em;
+      margin-right: 2px;
       position: relative;
       display: inline-block; }
       @media (max-width: 600px) {
         footer #footer-content #footer-social {
           margin-bottom: 2em; } }
+    footer #footer-content #flattr-btn {
+      float: left;
+      margin-right: 2em;
+      display: inline-block; }
     footer #footer-content .addthis_toolbox a {
       margin-bottom: 0px !important; }
     footer #footer-content p {

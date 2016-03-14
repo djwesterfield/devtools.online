@@ -3,8 +3,10 @@
   <div id="footer-content">
 
     <div id="footer-social" class="addthis_native_toolbox"></div>
-    <p>Made with <span class="fa fa-heart"></span> by <a href="http://www.sebastianinman.com" target="new">Sebastian Inman</a>.</p>
-    <p class="float-right">Please report any bugs or tweaks to the <a href="https://github.com/thinkpixels/devtools.online/issues" target="new">DevTools GitHub repo</a>.</p>
+
+    <script id='fb34os0'>(function(i){var f,s=document.getElementById(i);f=document.createElement('iframe');f.id='flattr-btn';f.src='//button.flattr.com/view/?fid=x73j3q&button=compact&url=https%3A%2F%2Fwww.devtools.online%2F';f.title='Flattr';f.height=20;f.width=110;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})('fb34os0');</script>
+
+    <p class="float-right">Made with <span class="fa fa-heart"></span> by <a href="http://www.sebastianinman.com" target="new">Sebastian Inman</a>. Please report any bugs or tweaks to the <a href="https://github.com/thinkpixels/devtools.online/issues" target="new">DevTools GitHub repo</a>.</p>
 
   </div>
 
