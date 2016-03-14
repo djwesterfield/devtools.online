@@ -405,7 +405,7 @@
 
   }
 
-  &[data-category=".miscellaneous"] {
+  &[data-category=".learning"] {
 
     .pace-progress {
 
@@ -415,13 +415,13 @@
 
     .category-selector[data-active="true"] {
 
-      border-color: $category_misc;
+      border-color: $category_learning;
 
     }
 
     aside nav#tag-nav .tag-selector[data-active=true] {
 
-      background-color: $category_misc;
+      background-color: $category_learning;
 
     }
 
@@ -432,7 +432,7 @@
       &:before,
       #content-promotion-container:before {
 
-        background-color: rgba($category_misc, 1);
+        background-color: rgba($category_learning, 1);
 
       }
 
@@ -440,11 +440,11 @@
 
     .thumb-actions {
 
-      background-color: rgba($category_misc, 0.95);
+      background-color: rgba($category_learning, 0.95);
 
       a:hover {
 
-        color: $category_misc !important;
+        color: $category_learning !important;
 
       }
 
@@ -452,7 +452,7 @@
 
     .details a:hover {
 
-      color: $category_misc !important;
+      color: $category_learning !important;
 
     }
 

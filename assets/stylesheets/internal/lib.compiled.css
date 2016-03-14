@@ -213,20 +213,20 @@ table {
     color: #2F99E7 !important; }
 #main[data-category=".web-hosting"] .details a:hover {
   color: #2F99E7 !important; }
-#main[data-category=".miscellaneous"] .category-selector[data-active="true"] {
+#main[data-category=".learning"] .category-selector[data-active="true"] {
   border-color: #E7B03D; }
-#main[data-category=".miscellaneous"] aside nav#tag-nav .tag-selector[data-active=true] {
+#main[data-category=".learning"] aside nav#tag-nav .tag-selector[data-active=true] {
   background-color: #E7B03D; }
-#main[data-category=".miscellaneous"] #content-header {
+#main[data-category=".learning"] #content-header {
   background-image: url(https://d13yacurqjgara.cloudfront.net/users/6541/screenshots/997791/dribb.png); }
-  #main[data-category=".miscellaneous"] #content-header:before,
-  #main[data-category=".miscellaneous"] #content-header #content-promotion-container:before {
+  #main[data-category=".learning"] #content-header:before,
+  #main[data-category=".learning"] #content-header #content-promotion-container:before {
     background-color: #e7b03d; }
-#main[data-category=".miscellaneous"] .thumb-actions {
+#main[data-category=".learning"] .thumb-actions {
   background-color: rgba(231, 176, 61, 0.95); }
-  #main[data-category=".miscellaneous"] .thumb-actions a:hover {
+  #main[data-category=".learning"] .thumb-actions a:hover {
     color: #E7B03D !important; }
-#main[data-category=".miscellaneous"] .details a:hover {
+#main[data-category=".learning"] .details a:hover {
   color: #E7B03D !important; }
 
 #page-header {
